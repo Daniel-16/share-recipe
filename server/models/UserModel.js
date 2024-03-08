@@ -17,7 +17,21 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+    minLength: 6,
   },
+});
+
+UserSchema.pre("save", async function (next) {
+  const email = this.email;
+  const user = await UserModel.findOne({ email });
+  try {
+    if (user) {
+      const emailExists = new Error("Email is already in use");
+      return next(emailExists);
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
 });
 
 const UserModel = mongoose.model("User", UserSchema);
