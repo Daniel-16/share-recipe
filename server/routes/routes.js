@@ -4,6 +4,6 @@ import { createRecipe } from "../controllers/RecipeController.js";
 const router = express.Router();
 
 router.post("/signup", createUser);
-router.post("/createRecipe", createRecipe);
+router.post("/createRecipe/:recipeOwnerId", createRecipe);
 
 export default router;

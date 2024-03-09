@@ -3,6 +3,7 @@ const RecipeSchema = new mongoose.Schema({
   recipeOwnerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+    required: true,
   },
   recipeOwner: {
     type: mongoose.Schema.Types.String,
@@ -20,10 +21,12 @@ const RecipeSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  steps: {
-    type: String,
-    required: true,
-  },
+  instructions: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
 });
 
 const RecipeModel = mongoose.model("Recipe", RecipeSchema);
