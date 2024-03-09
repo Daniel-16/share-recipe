@@ -74,4 +74,4 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-If you have any questions or feedback, feel free to [open an issue](https://github.com/user/repo/issues/new) or contact me through my [email](mailto:danieloloruntoba681@gmail.com).
+If you have any questions or feedback, feel free to [open an issue](https://github.com/Daniel-16/share-recipe/issues/new/choose) or contact me through my [email](mailto:danieloloruntoba681@gmail.com).
