@@ -35,3 +35,43 @@ This is a simple recipe sharing application api built with Node.js, Express, and
    npm run dev
    ```
    The server would run on `http://localhost:6000`
+
+## API Endpoints
+
+### User
+
+- `POST /api/signup`: Register a new user.
+  - Required fields: `username`, `email`, `password`
+
+<!-- - `POST /api/users/login`: Authenticate a user and obtain a JWT token.
+  - Required fields: `email`, `password` -->
+
+### Recipe
+
+- `POST /api/createRecipe/:recipeOwnerId`: Create a new recipe.
+  - Required fields: `title`, `imageUrl`, `timeFrame`, `instructions`.
+  <!-- - This endpoint requires authentication (JWT token in the `Authorization` header). -->
+
+<!-- - `GET /api/recipes`: Retrieve all recipes created by the authenticated user.
+  - This endpoint requires authentication (JWT token in the `Authorization` header). -->
+
+<!-- ## User Schema
+
+```javascript
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+}); -->
+
+## Contributing
+
+Contributions are definitely welcome!
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+If you have any questions or feedback, feel free to [open an issue](https://github.com/user/repo/issues/new) or contact me through my [email](mailto:danieloloruntoba681@gmail.com).
