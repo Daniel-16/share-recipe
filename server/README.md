@@ -25,9 +25,11 @@ This is a simple recipe sharing application api built with Node.js, Express, and
 ## Setup
 
 1. Create a `.env` file in the root directory and add the following environment variables:
+
    ```bash
    MONGODB_DEV=mongodb://localhost:27017/recipe-sharing
    ```
+
 2. Start the development server
    ```
    npm run dev
