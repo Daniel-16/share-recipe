@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 const UserSchema = new mongoose.Schema({
   username: {
@@ -32,6 +33,11 @@ UserSchema.pre("save", async function (next) {
   } catch (error) {
     throw new Error(error);
   }
+
+  //Hash password function
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
 });
 
 const UserModel = mongoose.model("User", UserSchema);
