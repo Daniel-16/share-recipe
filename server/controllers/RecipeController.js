@@ -100,10 +100,27 @@ export const upVoteRecipe = async (req, res) => {
     }
 
     recipe.upvotes.push(userId);
-    const updateRecipe = await recipe.save();
+    await recipe.save();
     res.status(200).json({
       success: true,
-      votes: updateRecipe,
+      // votedUsers: updateRecipe,
+      votes: "Upvoted this recipe",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
+
+export const getRecipeVotes = async (req, res) => {
+  const { recipeId } = req.params;
+  try {
+    const upvotes = await RecipeModel.findById(recipeId);
+    res.status(200).json({
+      success: true,
+      votes: upvotes.upvotes.length,
     });
   } catch (error) {
     res.status(500).json({
