@@ -33,3 +33,25 @@ export const createRecipe = async (req, res) => {
     });
   }
 };
+
+export const getAllRecipes = async (req, res) => {
+  try {
+    const recipes = await RecipeModel.find({});
+    if (recipes.length > 0) {
+      return res.status(201).json({
+        success: true,
+        recipes,
+      });
+    } else {
+      return res.status(404).json({
+        success: false,
+        error: "Recipes not found or empty",
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
