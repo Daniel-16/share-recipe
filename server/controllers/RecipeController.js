@@ -118,6 +118,12 @@ export const getRecipeVotes = async (req, res) => {
   const { recipeId } = req.params;
   try {
     const upvotes = await RecipeModel.findById(recipeId);
+    if (!upvotes) {
+      return res.status(404).json({
+        success: false,
+        error: "Could not find recipe",
+      });
+    }
     res.status(200).json({
       success: true,
       votes: upvotes.upvotes.length,

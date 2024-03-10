@@ -3,6 +3,7 @@ import { createUser, loginUser } from "../controllers/UserController.js";
 import {
   createRecipe,
   getAllRecipes,
+  getRecipeVotes,
   upVoteRecipe,
 } from "../controllers/RecipeController.js";
 import { authenticateUser } from "../middleware/authenticateUser.js";
@@ -68,5 +69,7 @@ router.get("/recipes", getAllRecipes);
  * @param {function} middleware
  */
 router.put("/recipes/:recipeId/upvote", authenticateUser, upVoteRecipe);
+
+router.get("/recipes/:recipeId/votes", authenticateUser, getRecipeVotes);
 
 export default router;
