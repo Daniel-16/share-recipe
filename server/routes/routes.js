@@ -3,7 +3,9 @@ import { createUser, loginUser } from "../controllers/UserController.js";
 import {
   createRecipe,
   getAllRecipes,
+  upVoteRecipe,
 } from "../controllers/RecipeController.js";
+import { authenticateUser } from "../middleware/authenticateUser.js";
 const router = express.Router();
 
 /**
@@ -54,5 +56,7 @@ router.post("/createRecipe/:recipeOwnerId", createRecipe);
  * @param {callback} middleware
  */
 router.get("/recipes", getAllRecipes);
+
+router.put("/recipes/:recipeId/upvote", authenticateUser, upVoteRecipe);
 
 export default router;
