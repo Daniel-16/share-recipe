@@ -11,7 +11,7 @@ export const createRecipe = async (req, res) => {
   // Data extraction from the request body
   const { title, imageUrl, timeFrame, instructions } = req.body;
   // Extracting the recipeOwnerId from the request paramaters
-  const { recipeOwnerId } = req.params;
+  const recipeOwnerId = req.user._id;
   try {
     const user = await UserModel.findById(recipeOwnerId);
     if (!user) {

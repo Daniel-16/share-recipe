@@ -44,7 +44,7 @@ router.post("/login", loginUser);
  * @param {callback} middleware - Express middleware.
  * @param {string} param - Recipe owner ID.
  */
-router.post("/createRecipe/:recipeOwnerId", createRecipe);
+router.post("/createRecipe/", authenticateUser, createRecipe);
 
 /**
  * Route for getting all recipes
