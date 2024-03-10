@@ -28,6 +28,7 @@ This is a simple recipe sharing application api built with Node.js, Express, and
 
    ```bash
    MONGODB_DEV=mongodb://localhost:27017/recipe-sharing
+   JWT_SECRET=create-your-own-secret
    ```
 
 2. Start the development server
