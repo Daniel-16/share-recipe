@@ -1,5 +1,5 @@
 import express from "express";
-import { createUser } from "../controllers/UserController.js";
+import { createUser, loginUser } from "../controllers/UserController.js";
 import {
   createRecipe,
   getAllRecipes,
@@ -17,6 +17,18 @@ const router = express.Router();
  * @param {callback} middleware - Express middleware.
  */
 router.post("/signup", createUser);
+
+/**
+ * Route for user log in
+ * POST /api/login
+ * @name login
+ * @memberof router
+ * @function
+ * @inner
+ * @param {string} path
+ * @param {callback} middleware
+ */
+router.post("/login", loginUser);
 
 /**
  * Route for creating a recipe.
