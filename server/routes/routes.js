@@ -49,7 +49,7 @@ router.post("/createRecipe/:recipeOwnerId", createRecipe);
  * Route for getting all recipes
  * GET /api/recipes
  * @name getAllRecipes
- * @memberof Router
+ * @memberof router
  * @function
  * @inner
  * @param {string} path
@@ -57,6 +57,16 @@ router.post("/createRecipe/:recipeOwnerId", createRecipe);
  */
 router.get("/recipes", getAllRecipes);
 
+/**
+ * Route for upvoting a recipe
+ * PUT /recipes/:recipeId/upvote
+ * @name upVoteRecipe
+ * @memberof router
+ * @function
+ * @inner
+ * @param {string} path
+ * @param {function} middleware
+ */
 router.put("/recipes/:recipeId/upvote", authenticateUser, upVoteRecipe);
 
 export default router;

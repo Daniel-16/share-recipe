@@ -68,6 +68,12 @@ export const getAllRecipes = async (req, res) => {
   }
 };
 
+/**
+ * Handles upvoting or removing upvote for a recipe.
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ * @returns {Object} A JSON response indicating success or failure.
+ */
 export const upVoteRecipe = async (req, res) => {
   const { recipeId } = req.params;
   const userId = req.user._id;
