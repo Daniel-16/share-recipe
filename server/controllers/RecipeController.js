@@ -67,3 +67,36 @@ export const getAllRecipes = async (req, res) => {
     });
   }
 };
+
+export const upVoteRecipe = async (req, res) => {
+  const { recipeId } = req.params;
+  const userId = req.user._id;
+
+  try {
+    const recipe = await RecipeModel.findById(recipeId);
+    if (!recipe) {
+      return res.status(404).json({
+        success: false,
+        error: "Recipe not found",
+      });
+    }
+    const alreadyVoted = recipe.upvotes.includes(userId);
+    if (alreadyVoted) {
+      return res.status(400).json({
+        success: false,
+        error: "You already voted for this recipe",
+      });
+    }
+    recipe.upvotes.push(userId);
+    const updateRecipe = await recipe.save();
+    res.status(200).json({
+      success: true,
+      votes: updateRecipe,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
