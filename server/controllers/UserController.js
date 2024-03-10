@@ -1,6 +1,7 @@
 import UserModel from "../models/UserModel.js";
 // import RecipeModel from "../models/RecipeModel.js";
 import bcrypt from "bcrypt";
+import { generateToken } from "../utils/generateToken.js";
 
 /**
  * Creates a new user.
@@ -17,9 +18,11 @@ export const createUser = async (req, res) => {
       email,
       password,
     });
+    const token = generateToken({ userId: user._id });
     res.status(201).json({
       success: true,
       user,
+      token,
     });
   } catch (error) {
     res.status(401).json({
@@ -48,6 +51,7 @@ export const loginUser = async (req, res) => {
         error: "Invalid email or password",
       });
     }
+    const token = generateToken({ userId: user._id });
     res.status(200).json({
       success: true,
       user: {
@@ -55,6 +59,7 @@ export const loginUser = async (req, res) => {
         username: user.username,
         email: user.email,
       },
+      token,
     });
   } catch (error) {
     res.status(500).json({
