@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const RecipeSchema = new mongoose.Schema({
   recipeOwnerId: {
     type: mongoose.Schema.Types.ObjectId,
