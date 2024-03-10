@@ -70,6 +70,6 @@ router.get("/recipes", getAllRecipes);
  */
 router.put("/recipes/:recipeId/upvote", authenticateUser, upVoteRecipe);
 
-router.get("/recipes/:recipeId/votes", authenticateUser, getRecipeVotes);
+router.get("/recipes/:recipeId/votes", getRecipeVotes);
 
 export default router;

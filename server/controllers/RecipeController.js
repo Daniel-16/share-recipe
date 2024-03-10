@@ -114,6 +114,12 @@ export const upVoteRecipe = async (req, res) => {
   }
 };
 
+/**
+ * Retrieves the number of votes for a recipe.
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ * @returns {void} - Does not return a value directly, but sends a JSON response with the number of votes.
+ */
 export const getRecipeVotes = async (req, res) => {
   const { recipeId } = req.params;
   try {
