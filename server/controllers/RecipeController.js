@@ -14,6 +14,12 @@ export const createRecipe = async (req, res) => {
   const { recipeOwnerId } = req.params;
   try {
     const user = await UserModel.findById(recipeOwnerId);
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        error: "User not found",
+      });
+    }
     const recipe = await RecipeModel.create({
       recipeOwnerId: user._id,
       recipeOwner: user.username,
@@ -34,9 +40,15 @@ export const createRecipe = async (req, res) => {
   }
 };
 
+/**
+ * Retrieves all recipes from the database.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @returns {Object} A JSON response containing an array of recipes.
+ */
 export const getAllRecipes = async (req, res) => {
   try {
-    const recipes = await RecipeModel.find({});
+    const recipes = await RecipeModel.find().sort({ createdAt: -1 });
     if (recipes.length > 0) {
       return res.status(201).json({
         success: true,
