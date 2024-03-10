@@ -82,11 +82,17 @@ export const upVoteRecipe = async (req, res) => {
     }
     const alreadyVoted = recipe.upvotes.includes(userId);
     if (alreadyVoted) {
-      return res.status(400).json({
-        success: false,
-        error: "You already voted for this recipe",
+      await RecipeModel.findByIdAndUpdate(
+        recipe,
+        { $pull: { upvotes: userId } },
+        { new: true }
+      );
+      return res.status(200).json({
+        success: true,
+        message: "Since you upvoted, you have removed your vote",
       });
     }
+
     recipe.upvotes.push(userId);
     const updateRecipe = await recipe.save();
     res.status(200).json({
