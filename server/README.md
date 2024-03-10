@@ -42,18 +42,28 @@ This is a simple recipe sharing application api built with Node.js, Express, and
 
 - `POST /api/signup`: Register a new user.
   - Required fields: `username`, `email`, `password`
+- `POST /api/login`: Log in a registered user
+  - Required fields: `email`, `password`
 
 <!-- - `POST /api/users/login`: Authenticate a user and obtain a JWT token.
   - Required fields: `email`, `password` -->
 
 ### Recipe
 
-- `POST /api/createRecipe/:recipeOwnerId`: Create a new recipe.
-  - Required fields: `title`, `imageUrl`, `timeFrame`, `instructions`.
-  <!-- - This endpoint requires authentication (JWT token in the `Authorization` header). -->
+- `POST /api/createRecipe/`: Create a new recipe.
 
-<!-- - `GET /api/recipes`: Retrieve all recipes created by the authenticated user.
-  - This endpoint requires authentication (JWT token in the `Authorization` header). -->
+  - Required fields: `title`, `imageUrl`, `timeFrame`, `instructions`.
+  - This endpoint requires authentication (JWT token in the `Authorization` header).
+
+- `GET /api/recipes`: Retrieve all recipes created.
+  <!-- - This endpoint requires authentication (JWT token in the `Authorization` header). -->
+- `PUT /api/recipes/:recipeId/upvote`: Upvote a recipe.
+
+  - Replace `/:recipeId` with the created recipe's id.
+  - This endpoint requires authentication (JWT token in the `Authorization` header).
+
+- `GET /api/recipes/:recipeId/votes`: Retrieves all the votes from a recipe
+  - Replace `/:recipeId` with the created recipe's id.
 
 <!-- ## User Schema
 
