@@ -1,6 +1,9 @@
 import express from "express";
 import { createUser } from "../controllers/UserController.js";
-import { createRecipe } from "../controllers/RecipeController.js";
+import {
+  createRecipe,
+  getAllRecipes,
+} from "../controllers/RecipeController.js";
 const router = express.Router();
 
 /**
@@ -27,5 +30,17 @@ router.post("/signup", createUser);
  * @param {string} param - Recipe owner ID.
  */
 router.post("/createRecipe/:recipeOwnerId", createRecipe);
+
+/**
+ * Route for getting all recipes
+ * GET /api/recipes
+ * @name getAllRecipes
+ * @memberof Router
+ * @function
+ * @inner
+ * @param {string} path
+ * @param {callback} middleware
+ */
+router.get("/recipes", getAllRecipes);
 
 export default router;
