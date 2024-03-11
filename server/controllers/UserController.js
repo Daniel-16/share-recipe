@@ -32,6 +32,12 @@ export const createUser = async (req, res) => {
   }
 };
 
+/**
+ * Signs in a new user
+ * @param {Object} req
+ * @param {Object} res
+ * @returns {Object} Signed in user
+ */
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
