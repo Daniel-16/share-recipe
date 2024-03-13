@@ -1,8 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import foodMain from "../assets/michele-blackwell-rAyCBQTH7ws-unsplash.jpg";
 import Link from "next/link";
+import Brand from "@/components/BrandLogo";
+import Section from "@/components/Section";
 
 function Home() {
   const [state, setState] = useState(false);
@@ -16,58 +18,9 @@ function Home() {
   // useEffect(() => {
   //   document.onclick = (e) => {
   //     const target = e.target;
-  //     if (!target.closest(".menu-btn")) setState(false);
+  //     if (!target?.closest(".menu-btn")) setState(false);
   //   };
   // }, []);
-
-  const Brand = () => (
-    <div className="flex items-center justify-between py-5 md:block">
-      <a href="javascript:void(0)">
-        <Image
-          src="https://www.floatui.com/logo.svg"
-          width={120}
-          height={50}
-          alt="Float UI logo"
-        />
-      </a>
-      <div className="md:hidden">
-        <button
-          className="menu-btn text-gray-500 hover:text-gray-800"
-          onClick={() => setState(!state)}
-        >
-          {state ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          )}
-        </button>
-      </div>
-    </div>
-  );
 
   return (
     <div className="relative">
@@ -81,7 +34,7 @@ function Home() {
       <div className="relative">
         <header>
           <div className={`md:hidden ${state ? "mx-2 pb-5" : "hidden"}`}>
-            <Brand />
+            <Brand state={state} setState={setState} />
           </div>
           <nav
             className={`pb-5 md:text-sm ${
@@ -91,7 +44,7 @@ function Home() {
             }`}
           >
             <div className="gap-x-14 items-center max-w-screen-2xl mx-10 px-4 md:flex md:px-8">
-              <Brand />
+              <Brand state={state} setState={setState} />
               <div
                 className={`flex-1 items-center mt-8 md:mt-0 md:flex ${
                   state ? "block" : "hidden"
@@ -131,7 +84,6 @@ function Home() {
                         />
                       </svg>
                     </Link>
-                    div
                   </div>
                   <div className="items-center justify-end mt-6 space-y-6 space-x-4 md:inline-flex md:mt-0">
                     <Link
@@ -162,7 +114,7 @@ function Home() {
           <div className="max-w-screen-lg mx-auto px-4 py-20 gap-12 text-gray-600 overflow-hidden md:px-4 md:flex">
             <div className="flex-none space-y-5 max-w-xl">
               <h1 className="text-4xl text-gray-800 font-extrabold sm:text-5xl md:pt-10">
-                Delicious Dishes for Food Bloggers
+                Spoonfuls of Delight: A Feast for Foodies
               </h1>
               <p>
                 Sed ut perspiciatis unde omnis iste natus voluptatem accusantium
@@ -173,8 +125,8 @@ function Home() {
                 aspernatur ipsa necessitatibus?
               </p>
               <div className="flex items-center gap-x-3 sm:text-sm">
-                <a
-                  href="javascript:void(0)"
+                <Link
+                  href=""
                   className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex"
                 >
                   Explore recipes
@@ -190,7 +142,7 @@ function Home() {
                       clipRule="evenodd"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="flex-1 hidden md:block">
@@ -202,6 +154,7 @@ function Home() {
               />
             </div>
           </div>
+          <Section />
         </section>
       </div>
     </div>
