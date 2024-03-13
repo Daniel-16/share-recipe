@@ -1,5 +1,6 @@
 import Image from "next/image";
 import snapFood from "../assets/ambitious-studio-rick-barrett-N2i51XCS-3g-unsplash.jpg";
+import Link from "next/link";
 
 export default function Section() {
   return (
@@ -21,7 +22,10 @@ export default function Section() {
           nulla itaque soluta repellendus accusamus! Omnis eos beatae enim rerum
           delectus.
         </p>
-        <button className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex">
+        <Link
+          href=""
+          className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex"
+        >
           Create a recipe
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +39,7 @@ export default function Section() {
               clipRule="evenodd"
             />
           </svg>
-        </button>
+        </Link>
       </div>
     </div>
   );
