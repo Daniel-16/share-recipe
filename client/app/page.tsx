@@ -5,6 +5,7 @@ import foodMain from "../assets/michele-blackwell-rAyCBQTH7ws-unsplash.jpg";
 import Link from "next/link";
 import Brand from "@/components/BrandLogo";
 import Section from "@/components/Section";
+import Recipes from "@/components/Recipes";
 
 function Home() {
   const [state, setState] = useState(false);
@@ -26,10 +27,10 @@ function Home() {
     <div className="relative">
       <div
         className="absolute inset-0 blur-xl h-[580px]"
-        style={{
-          background:
-            "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)",
-        }}
+        // style={{
+        //   background:
+        //     "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)",
+        // }}
       ></div>
       <div className="relative">
         <header>
@@ -155,6 +156,7 @@ function Home() {
             </div>
           </div>
           <Section />
+          <Recipes />
         </section>
       </div>
     </div>
