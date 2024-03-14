@@ -10,6 +10,7 @@ export default function Section() {
           src={snapFood}
           alt="Snap food"
           className="md:rounded-tr-[108px] md:rounded-bl-[108px] w-auto h-1/2"
+          loading="lazy"
         />
       </div>
       <div className="flex-none space-y-5 max-w-xl">

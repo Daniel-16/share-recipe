@@ -6,6 +6,7 @@ import Link from "next/link";
 import Brand from "@/components/BrandLogo";
 import Section from "@/components/Section";
 import Recipes from "@/components/Recipes";
+import RecipeBlogs from "@/components/RecipeBlogs";
 
 function Home() {
   const [state, setState] = useState(false);
@@ -151,12 +152,14 @@ function Home() {
                 src={foodMain}
                 className="md:rounded-tl-[108px] md:rounded-br-[108px] w-auto h-auto"
                 alt="Food main"
+                loading="lazy"
                 // style={{ height: "20rem" }}
               />
             </div>
           </div>
           <Section />
           <Recipes />
+          <RecipeBlogs />
         </section>
       </div>
     </div>
