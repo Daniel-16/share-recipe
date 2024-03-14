@@ -1,19 +1,20 @@
 import Image from "next/image";
 import recipeImage from "../assets/eaters-collective-i_xVfNtQjwI-unsplash.jpg";
+import Link from "next/link";
 
 export default function RecipeBlogs() {
   return (
     <div className="max-w-screen-lg mx-auto mb-10">
       <ul className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-        <li className="w-full mx-auto group sm:max-w-sm">
-          <a href="">
+        <li className="w-full mx-auto group sm:max-w-sm border rounded-[15px] hover:shadow-md duration-200">
+          <Link href="">
             <Image
               src={recipeImage}
               loading="lazy"
               alt={"Recipes"}
-              className="w-full rounded-lg"
+              className="w-full rounded-t-lg"
             />
-            <div className="mt-3 space-y-2">
+            <div className="mt-3 space-y-2 px-3 pb-3">
               <span className="block text-indigo-600 text-sm">
                 21st March, 2022
               </span>
@@ -25,17 +26,17 @@ export default function RecipeBlogs() {
                 Voluptates quaerat molestias quod magnam dolor delectus,
               </p>
             </div>
-          </a>
+          </Link>
         </li>
-        <li className="w-full mx-auto group sm:max-w-sm">
-          <a href="">
+        <li className="w-full mx-auto group sm:max-w-sm border rounded-[15px] hover:shadow-md duration-200">
+          <Link href="">
             <Image
               src={recipeImage}
               loading="lazy"
               alt={"Recipes"}
-              className="w-full rounded-lg"
+              className="w-full rounded-t-lg"
             />
-            <div className="mt-3 space-y-2">
+            <div className="mt-3 space-y-2 px-3 pb-3">
               <span className="block text-indigo-600 text-sm">
                 21st March, 2022
               </span>
@@ -47,17 +48,17 @@ export default function RecipeBlogs() {
                 Voluptates quaerat molestias quod magnam dolor delectus,
               </p>
             </div>
-          </a>
+          </Link>
         </li>
-        <li className="w-full mx-auto group sm:max-w-sm">
-          <a href="">
+        <li className="w-full mx-auto group sm:max-w-sm border rounded-[15px] hover:shadow-md duration-200">
+          <Link href="">
             <Image
               src={recipeImage}
               loading="lazy"
               alt={"Recipes"}
-              className="w-full rounded-lg"
+              className="w-full rounded-t-lg"
             />
-            <div className="mt-3 space-y-2">
+            <div className="mt-3 space-y-2 px-3 pb-3">
               <span className="block text-indigo-600 text-sm">
                 21st March, 2022
               </span>
@@ -69,17 +70,17 @@ export default function RecipeBlogs() {
                 Voluptates quaerat molestias quod magnam dolor delectus,
               </p>
             </div>
-          </a>
+          </Link>
         </li>
-        <li className="w-full mx-auto group sm:max-w-sm">
-          <a href="">
+        <li className="w-full mx-auto group sm:max-w-sm border rounded-[15px] hover:shadow-md duration-200">
+          <Link href="">
             <Image
               src={recipeImage}
               loading="lazy"
               alt={"Recipes"}
-              className="w-full rounded-lg"
+              className="w-full rounded-t-lg"
             />
-            <div className="mt-3 space-y-2">
+            <div className="mt-3 space-y-2 px-3 pb-3">
               <span className="block text-indigo-600 text-sm">
                 21st March, 2022
               </span>
@@ -91,17 +92,17 @@ export default function RecipeBlogs() {
                 Voluptates quaerat molestias quod magnam dolor delectus,
               </p>
             </div>
-          </a>
+          </Link>
         </li>
-        <li className="w-full mx-auto group sm:max-w-sm">
-          <a href="">
+        <li className="w-full mx-auto group sm:max-w-sm border rounded-[15px] hover:shadow-md duration-200">
+          <Link href="">
             <Image
               src={recipeImage}
               loading="lazy"
               alt={"Recipes"}
-              className="w-full rounded-lg"
+              className="w-full rounded-t-lg"
             />
-            <div className="mt-3 space-y-2">
+            <div className="mt-3 space-y-2 px-3 pb-3">
               <span className="block text-indigo-600 text-sm">
                 21st March, 2022
               </span>
@@ -113,17 +114,17 @@ export default function RecipeBlogs() {
                 Voluptates quaerat molestias quod magnam dolor delectus,
               </p>
             </div>
-          </a>
+          </Link>
         </li>
-        <li className="w-full mx-auto group sm:max-w-sm">
-          <a href="">
+        <li className="w-full mx-auto group sm:max-w-sm border rounded-[15px] hover:shadow-md duration-200">
+          <Link href="">
             <Image
               src={recipeImage}
               loading="lazy"
               alt={"Recipes"}
-              className="w-full rounded-lg"
+              className="w-full rounded-t-lg"
             />
-            <div className="mt-3 space-y-2">
+            <div className="mt-3 space-y-2 px-3 pb-3">
               <span className="block text-indigo-600 text-sm">
                 21st March, 2022
               </span>
@@ -135,7 +136,7 @@ export default function RecipeBlogs() {
                 Voluptates quaerat molestias quod magnam dolor delectus,
               </p>
             </div>
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
