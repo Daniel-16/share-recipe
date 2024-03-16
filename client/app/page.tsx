@@ -7,6 +7,7 @@ import Brand from "@/components/BrandLogo";
 import Section from "@/components/Section";
 import Recipes from "@/components/Recipes";
 import RecipeBlogs from "@/components/RecipeBlogs";
+import NewsLetter from "@/components/NewsLetter";
 
 function Home() {
   const [state, setState] = useState(false);
@@ -160,6 +161,7 @@ function Home() {
           <Section />
           <Recipes />
           <RecipeBlogs />
+          <NewsLetter />
         </section>
       </div>
     </div>
