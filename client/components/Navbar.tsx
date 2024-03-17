@@ -26,7 +26,7 @@ export default function Navbar() {
           >
             <ul className="flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
               <li className="text-gray-700 hover:text-gray-900">
-                <Link href="" className="block">
+                <Link href="/" className="block">
                   Home
                 </Link>
               </li>
