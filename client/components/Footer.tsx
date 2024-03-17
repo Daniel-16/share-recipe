@@ -84,13 +84,13 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <style jsx>{`
+      {/* <style jsx>{`
         .svg-icon path,
         .svg-icon polygon,
         .svg-icon rect {
           fill: currentColor;
         }
-      `}</style>
+      `}</style> */}
     </footer>
   );
 }
