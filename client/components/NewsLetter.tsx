@@ -1,6 +1,6 @@
 export default function NewsLetter() {
   return (
-    <div className="bg-[#FFF0ED] w-full py-10 mt-10 mx-auto text-center px-4">
+    <div className="bg-[#FFF0ED] w-full py-20 mt-10 mx-auto text-center px-4">
       <div className="">
         <h1 className="text-4xl text-gray-800 font-extrabold">
           Let&apos;s stay in touch

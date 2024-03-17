@@ -8,6 +8,7 @@ import Section from "@/components/Section";
 import Recipes from "@/components/Recipes";
 import RecipeBlogs from "@/components/RecipeBlogs";
 import NewsLetter from "@/components/NewsLetter";
+import Sponsors from "@/components/Sponsors";
 
 function Home() {
   const [state, setState] = useState(false);
@@ -162,6 +163,7 @@ function Home() {
           <Recipes />
           <RecipeBlogs />
           <NewsLetter />
+          <Sponsors />
         </section>
       </div>
     </div>
