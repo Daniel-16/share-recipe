@@ -65,6 +65,8 @@ This is a simple recipe sharing application api built with Node.js, Express, and
 
 - `GET /api/recipes/:recipeId/votes`: Retrieves all the votes from a recipe
   - Replace `/:recipeId` with the created recipe's id.
+- `POST /api/subscribe`: Subscribe to email newsletters and updates
+  - Required fields: `email`
 
 <!-- ## User Schema
 
