@@ -2,6 +2,7 @@ import UserModel from "../models/UserModel.js";
 // import RecipeModel from "../models/RecipeModel.js";
 import bcrypt from "bcrypt";
 import { generateToken } from "../utils/generateToken.js";
+import NewsLetterModel from "../models/NewsletterModel.js";
 
 /**
  * Creates a new user.
@@ -70,6 +71,26 @@ export const loginUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       success: false,
+      error: error.message,
+    });
+  }
+};
+
+/**
+ * Subscribe to news letter or updates
+ * @param {Object} req
+ * @param {Object} res
+ * @returns {Object} Subscribed user
+ */
+export const subscribe = async (req, res) => {
+  const { email } = req.body;
+  try {
+    const user = await NewsLetterModel.create({ email });
+    res.status(200).json({
+      message: `User subscribed successfully ${user.email}`,
+    });
+  } catch (error) {
+    res.status(401).json({
       error: error.message,
     });
   }

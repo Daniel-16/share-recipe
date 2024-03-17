@@ -1,5 +1,9 @@
 import express from "express";
-import { createUser, loginUser } from "../controllers/UserController.js";
+import {
+  createUser,
+  loginUser,
+  subscribe,
+} from "../controllers/UserController.js";
 import {
   createRecipe,
   getAllRecipes,
@@ -71,5 +75,16 @@ router.get("/recipes", getAllRecipes);
 router.put("/recipes/:recipeId/upvote", authenticateUser, upVoteRecipe);
 
 router.get("/recipes/:recipeId/votes", getRecipeVotes);
+
+/**
+ * Route for subscribing to updates
+ * @name subscribe
+ * @memberof router
+ * @function
+ * @inner
+ * @param {string} path
+ * @param {function} middleware
+ */
+router.post("/subscribe", subscribe);
 
 export default router;
