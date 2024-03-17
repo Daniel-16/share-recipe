@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
     <footer className="text-gray-500 bg-[#f5f5f5] px-4 py-5 mx-auto md:px-8 w-full">
       <div className="max-w-xl sm:mx-auto sm:text-center">
@@ -24,7 +26,7 @@ export default function Footer() {
           <path
             d="M0.696958 35.1044C90.6527 65.1024 128.195 37.5009 123.587 30.3981"
             stroke="black"
-            stroke-width="3"
+            strokeWidth="3"
           />
         </svg>
         <p className="leading-relaxed mt-2 text-[15px]">
@@ -45,9 +47,7 @@ export default function Footer() {
         </li>
       </ul>
       <div className="mt-8 items-center justify-between sm:flex">
-        <div className="mt-4 sm:mt-0">
-          &copy; 2022 Float UI All rights reserved.
-        </div>
+        <div className="mt-4 sm:mt-0">&copy; {year} All rights reserved.</div>
         <div className="mt-6 sm:mt-0">
           <ul className="flex items-center space-x-4">
             <li className="w-10 h-10 border rounded-full flex items-center justify-center">

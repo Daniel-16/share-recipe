@@ -13,19 +13,6 @@ import Footer from "@/components/Footer";
 
 function Home() {
   const [state, setState] = useState(false);
-  const navigation = [
-    { title: "Home", path: "javascript:void(0)" },
-    { title: "Recipes", path: "javascript:void(0)" },
-    { title: "About us", path: "javascript:void(0)" },
-    { title: "Contact", path: "javascript:void(0)" },
-  ];
-
-  // useEffect(() => {
-  //   document.onclick = (e) => {
-  //     const target = e.target;
-  //     if (!target?.closest(".menu-btn")) setState(false);
-  //   };
-  // }, []);
 
   return (
     <div className="relative">
@@ -56,18 +43,26 @@ function Home() {
                 } `}
               >
                 <ul className="flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
-                  {navigation.map((item, idx) => {
-                    return (
-                      <li
-                        key={idx}
-                        className="text-gray-700 hover:text-gray-900"
-                      >
-                        <a href={item.path} className="block">
-                          {item.title}
-                        </a>
-                      </li>
-                    );
-                  })}
+                  <li className="text-gray-700 hover:text-gray-900">
+                    <Link href="" className="block">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="text-gray-700 hover:text-gray-900">
+                    <Link href="" className="block">
+                      Recipes
+                    </Link>
+                  </li>
+                  <li className="text-gray-700 hover:text-gray-900">
+                    <Link href="" className="block">
+                      About us
+                    </Link>
+                  </li>
+                  <li className="text-gray-700 hover:text-gray-900">
+                    <Link href="" className="block">
+                      Contact
+                    </Link>
+                  </li>
                 </ul>
                 <div className="md:space-x-2">
                   <div className="items-center justify-end mt-6 space-y-6 space-x-4 md:inline-flex md:mt-0">

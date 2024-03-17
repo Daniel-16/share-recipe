@@ -37,7 +37,7 @@ export default function Brand({
           <path
             d="M0.696958 35.1044C90.6527 65.1024 128.195 37.5009 123.587 30.3981"
             stroke="black"
-            stroke-width="3"
+            strokeWidth="3"
           />
         </svg>
       </Link>
