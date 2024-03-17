@@ -9,6 +9,7 @@ import Recipes from "@/components/Recipes";
 import RecipeBlogs from "@/components/RecipeBlogs";
 import NewsLetter from "@/components/NewsLetter";
 import Sponsors from "@/components/Sponsors";
+import Footer from "@/components/Footer";
 
 function Home() {
   const [state, setState] = useState(false);
@@ -164,6 +165,7 @@ function Home() {
           <RecipeBlogs />
           <NewsLetter />
           <Sponsors />
+          <Footer />
         </section>
       </div>
     </div>
