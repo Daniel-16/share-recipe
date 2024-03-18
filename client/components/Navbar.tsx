@@ -10,7 +10,11 @@ export default function Navbar() {
 
   const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
     if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: ref.current.offsetTop,
+        left: 0,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -35,28 +39,37 @@ export default function Navbar() {
           >
             <ul className="flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
               <li className="text-gray-700 hover:text-gray-900">
-                <Link href="/" className="block">
+                <Link
+                  href="/"
+                  className="block"
+                  onClick={() => setState(!state)}
+                >
                   Home
                 </Link>
               </li>
               <li className="text-gray-700 hover:text-gray-900">
-                <Link href="" className="block">
+                <div
+                  className="block hover:cursor-pointer"
+                  onClick={() => scrollToSection(section2)}
+                >
                   Recipes
+                </div>
+              </li>
+              <li className="text-gray-700 hover:text-gray-900">
+                <Link href="" className="block">
+                  Add recipes
                 </Link>
               </li>
               <li className="text-gray-700 hover:text-gray-900">
-                <Link
-                  href="#"
-                  className="block"
-                  onClick={() => scrollToSection(section1)}
+                <div
+                  // href="#"
+                  className="block hover:cursor-pointer"
+                  onClick={() => {
+                    scrollToSection(section1);
+                  }}
                 >
                   About us
-                </Link>
-              </li>
-              <li className="text-gray-700 hover:text-gray-900">
-                <Link href="" className="block">
-                  Contact
-                </Link>
+                </div>
               </li>
             </ul>
             <div className="md:space-x-2">
