@@ -69,7 +69,7 @@ export default function Navbar() {
               </div>
               <div className="items-center justify-end mt-6 space-y-6 space-x-4 md:inline-flex md:mt-0">
                 <Link
-                  href="/"
+                  href="/signup"
                   className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex"
                 >
                   Sign up

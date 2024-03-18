@@ -5,16 +5,16 @@ import Link from "next/link";
 export default function Section() {
   return (
     <div className="max-w-screen-lg mx-auto px-4 md:flex py-24 md:space-x-20 md:justify-center md:items-center md:px-4 overflow-hidden">
-      <div className="max-w-sm hidden md:block">
+      <div className="max-w-sm p-5 md:p-0">
         <Image
           src={snapFood}
           alt="Snap food"
-          className="md:rounded-tr-[108px] md:rounded-bl-[108px] w-auto h-1/2"
+          className="rounded-tr-[108px] rounded-bl-[108px] md:w-auto md:h-1/2"
           loading="lazy"
         />
       </div>
       <div className="flex-none space-y-5 max-w-xl">
-        <h1 className="text-4xl text-gray-800 font-extrabold sm:text-5xl md:pt-10">
+        <h1 className="text-4xl text-gray-800 font-extrabold sm:text-5xl md:pt-10 pt-5">
           Share your Recipes
         </h1>
         <p className="text-gray-800">
