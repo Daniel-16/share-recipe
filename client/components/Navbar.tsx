@@ -1,10 +1,19 @@
 "use client";
 import Link from "next/link";
 import Brand from "./BrandLogo";
-import { useState } from "react";
+import { useState, useContext, MutableRefObject, RefObject } from "react";
+import { SectionContext } from "@/context/SectionContext";
 
 export default function Navbar() {
   const [state, setState] = useState(false);
+  const { section1, section2, section3 } = useContext(SectionContext);
+
+  const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header>
       <div className={`md:hidden ${state ? "mx-2 pb-5" : "hidden"}`}>
@@ -36,7 +45,11 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="text-gray-700 hover:text-gray-900">
-                <Link href="" className="block">
+                <Link
+                  href="#"
+                  className="block"
+                  onClick={() => scrollToSection(section1)}
+                >
                   About us
                 </Link>
               </li>

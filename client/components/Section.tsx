@@ -1,10 +1,17 @@
+"use client";
 import Image from "next/image";
 import snapFood from "../assets/ambitious-studio-rick-barrett-N2i51XCS-3g-unsplash.jpg";
 import Link from "next/link";
+import { SectionContext } from "@/context/SectionContext";
+import { useContext } from "react";
 
 export default function Section() {
+  const { section1 } = useContext(SectionContext);
   return (
-    <div className="max-w-screen-lg mx-auto px-4 md:flex py-24 md:space-x-20 md:justify-center md:items-center md:px-4 overflow-hidden">
+    <div
+      ref={section1}
+      className="max-w-screen-lg mx-auto px-4 md:flex py-24 md:space-x-20 md:justify-center md:items-center md:px-4 overflow-hidden"
+    >
       <div className="max-w-sm p-5 md:p-0">
         <Image
           src={snapFood}

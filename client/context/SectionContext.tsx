@@ -1,15 +1,36 @@
-// "use client";
-// import { createContext, useRef } from "react";
+"use client";
+import { createContext, useRef, MutableRefObject, RefObject } from "react";
 
-// // export const SectionContext = createContext();
+interface SectionRefs {
+  section1: RefObject<HTMLDivElement>;
+  section2: MutableRefObject<HTMLElement | null>;
+  section3: MutableRefObject<HTMLElement | null>;
+}
 
-// export const SectionProvider = ({ children }: { children: any }) => {
-//   const section1 = useRef(null);
-//   const section2 = useRef(null);
-//   const section3 = useRef(null);
-//   return (
-//     <SectionContext.Provider value={{ section1, section2, section3 }}>
-//       {children}
-//     </SectionContext.Provider>
-//   );
-// };
+export const SectionContext = createContext<SectionRefs>({
+  section1: { current: null },
+  section2: { current: null },
+  section3: { current: null },
+});
+
+export const SectionProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  const section1 = useRef<HTMLDivElement>(null);
+  const section2 = useRef<HTMLElement>(null);
+  const section3 = useRef<HTMLElement>(null);
+
+  return (
+    <SectionContext.Provider
+      value={{
+        section1,
+        section2,
+        section3,
+      }}
+    >
+      {children}
+    </SectionContext.Provider>
+  );
+};
