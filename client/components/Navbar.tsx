@@ -68,7 +68,7 @@ export default function Navbar() {
                     scrollToSection(section1);
                   }}
                 >
-                  About us
+                  About
                 </div>
               </li>
             </ul>
