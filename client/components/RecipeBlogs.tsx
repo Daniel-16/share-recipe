@@ -18,6 +18,12 @@ export default function RecipeBlogs() {
   };
   return (
     <div className="max-w-screen-lg mx-auto mb-10">
+      <Link
+        href=""
+        className="flex justify-end items-center pr-6 pb-3 hover:cursor-pointer text-[#B66055] hover:text-[#a7727d] focus:text-[#B66055]"
+      >
+        <p className="font-extrabold text-lg">View more</p>
+      </Link>
       <ul className="grid gap-x-8 gap-y-10 sm:grid-cols-1 md:grid-cols-3 px-5">
         <li className="w-full mx-auto group sm:max-w-sm border rounded-[15px] hover:shadow-md duration-200">
           <Image
