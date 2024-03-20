@@ -141,3 +141,27 @@ export const getRecipeVotes = async (req, res) => {
     });
   }
 };
+
+export const getUserRecipes = async (req, res) => {
+  const userId = req.user._id;
+  try {
+    const user = await UserModel.findById({ _id: userId });
+    const recipes = await RecipeModel.findById({ recipeOwnerId: user });
+    if (user) {
+      return res.status(200).json({
+        success: true,
+        recipes,
+      });
+    } else {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
