@@ -33,6 +33,11 @@ export default function Recipe() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
+        <div className="py-10">
+          <h1 className="text-4xl font-extrabold text-gray-800">
+            Sweet Potato
+          </h1>
+        </div>
       </div>
     </>
   );
