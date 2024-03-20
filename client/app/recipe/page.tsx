@@ -38,7 +38,7 @@ export default function Recipe() {
           <h1 className="text-4xl font-extrabold text-gray-800">
             Sweet Potato
           </h1>
-          <div className="flex items-center gap-2 py-5">
+          <div className="md:flex md:items-center md:gap-2 md:py-5 grid grid-cols-2 py-5 gap-2">
             <div className="inline-flex items-center space-x-2">
               <svg
                 fill="#B66055"
