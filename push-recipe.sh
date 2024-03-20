@@ -12,4 +12,6 @@ read commit_message
 
 git commit -m "$commit_message"
 
+git pull origin main
+
 git push origin main
