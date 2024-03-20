@@ -1,6 +1,7 @@
 import Image from "next/image";
 import foodImage from "../../../assets/michele-blackwell-rAyCBQTH7ws-unsplash.jpg";
 import Ingredients from "./Ingredients";
+import Instructions from "./Instructions";
 
 export default function RecipeDetails() {
   return (
@@ -25,6 +26,7 @@ export default function RecipeDetails() {
         <h1 className="text-4xl font-extrabold text-gray-800">Ingredients:</h1>
         <Ingredients />
       </div>
+      <Instructions />
     </div>
   );
 }

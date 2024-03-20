@@ -3,7 +3,7 @@ export default function Ingredients() {
     <>
       <ul className="py-5 text-gray-600 space-y-5">
         <li className="">
-          <div className="inline-flex items-center">
+          <div className="inline-flex items-center space-x-2">
             <svg
               fill="#b66055"
               className="w-6"
@@ -23,7 +23,7 @@ export default function Ingredients() {
           </div>
         </li>
         <li className="">
-          <div className="inline-flex items-center">
+          <div className="inline-flex items-center space-x-2">
             <svg
               fill="#b66055"
               className="w-6"
@@ -43,7 +43,7 @@ export default function Ingredients() {
           </div>
         </li>
         <li className="">
-          <div className="inline-flex items-center">
+          <div className="inline-flex items-center space-x-2">
             <svg
               fill="#b66055"
               className="w-6"
@@ -63,7 +63,7 @@ export default function Ingredients() {
           </div>
         </li>
         <li className="">
-          <div className="inline-flex items-center">
+          <div className="inline-flex items-center space-x-2">
             <svg
               fill="#b66055"
               className="w-6"
