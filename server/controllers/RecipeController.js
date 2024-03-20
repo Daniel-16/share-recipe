@@ -142,6 +142,12 @@ export const getRecipeVotes = async (req, res) => {
   }
 };
 
+/**
+ *
+ * @param {Object} req
+ * @param {Object} res
+ * @returns JSON response of recipes if a user exists
+ */
 export const getUserRecipes = async (req, res) => {
   const userId = req.user._id;
   try {
