@@ -145,9 +145,11 @@ export const getRecipeVotes = async (req, res) => {
 export const getUserRecipes = async (req, res) => {
   const userId = req.user._id;
   try {
-    const user = await UserModel.findById({ _id: userId });
-    const recipes = await RecipeModel.findById({ recipeOwnerId: user });
+    const user = await UserModel.findById(userId);
     if (user) {
+      const recipes = await RecipeModel.find({ recipeOwnerId: user._id }).sort({
+        createdAt: -1,
+      });
       return res.status(200).json({
         success: true,
         recipes,

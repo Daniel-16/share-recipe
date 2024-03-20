@@ -8,6 +8,7 @@ import {
   createRecipe,
   getAllRecipes,
   getRecipeVotes,
+  getUserRecipes,
   upVoteRecipe,
 } from "../controllers/RecipeController.js";
 import { authenticateUser } from "../middleware/authenticateUser.js";
@@ -86,5 +87,7 @@ router.get("/recipes/:recipeId/votes", getRecipeVotes);
  * @param {function} middleware
  */
 router.post("/subscribe", subscribe);
+
+router.get("/userRecipes", authenticateUser, getUserRecipes);
 
 export default router;
