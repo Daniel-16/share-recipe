@@ -17,13 +17,13 @@ export default function Recipe() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink>
+              <BreadcrumbLink asChild>
                 <Link href="/">Home</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink>
+              <BreadcrumbLink asChild>
                 <Link href="/recipe">Recipe</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
