@@ -67,6 +67,8 @@ This is a simple recipe sharing application api built with Node.js, Express, and
   - Replace `/:recipeId` with the created recipe's id.
 - `POST /api/subscribe`: Subscribe to email newsletters and updates
   - Required fields: `email`
+- `GET /api/userRecipes`: Get recipes of an authenticated user
+  - This endpoint requires authentication (JWT token in the `Authorization` header).
 
 <!-- ## User Schema
 
