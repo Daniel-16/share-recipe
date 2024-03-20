@@ -88,6 +88,15 @@ router.get("/recipes/:recipeId/votes", getRecipeVotes);
  */
 router.post("/subscribe", subscribe);
 
+/**
+ * Route for getting user's recipes
+ * @name userRecipes
+ * @memberof router
+ * @function
+ * @inner
+ * @param {string} path
+ * @param {function} middleware
+ */
 router.get("/userRecipes", authenticateUser, getUserRecipes);
 
 export default router;
