@@ -20,7 +20,7 @@ export default function Brand({
           alt="Float UI logo"
         /> */}
         <svg
-          width="200"
+          width="150"
           height="65"
           viewBox="0 0 210 73"
           fill="none"
