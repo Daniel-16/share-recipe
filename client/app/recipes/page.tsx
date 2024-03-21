@@ -3,6 +3,8 @@ import recipeImage from "../../assets/michele-blackwell-rAyCBQTH7ws-unsplash.jpg
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
+  const text =
+    "Lorem, ipsum dolor sitsdfsdfasdfsdf consectetur adipisicing elit.Voluptates quaerat molestias quod magnam dolor delectus,";
   return (
     <>
       <Navbar />
@@ -51,8 +53,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 text-sm duration-150 group-hover:text-gray-800">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates quaerat molestias quod magnam dolor delectus,
+                {text.length > 113 ? `${text.slice(0, 113)}...` : text}
               </p>
               <div className="inline-flex items-center space-x-1">
                 <svg
