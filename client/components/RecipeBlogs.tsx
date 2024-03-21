@@ -19,7 +19,7 @@ export default function RecipeBlogs() {
   return (
     <div className="max-w-screen-lg mx-auto mb-10">
       <Link
-        href=""
+        href="/recipes"
         className="flex justify-end items-center pr-6 pb-3 hover:cursor-pointer text-[#B66055] hover:text-[#a7727d] focus:text-[#B66055]"
       >
         <p className="font-extrabold text-lg">View more</p>

@@ -12,8 +12,10 @@ import Sponsors from "@/components/Sponsors";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { SectionProvider } from "@/context/SectionContext";
+// import useScrollToTop from "@/hooks/useScrollTop";
 
 function Home() {
+  // useScrollToTop();
   return (
     <div className="relative">
       <div className="relative">
