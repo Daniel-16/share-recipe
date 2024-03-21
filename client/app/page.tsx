@@ -20,19 +20,19 @@ function Home() {
         <SectionProvider>
           <Navbar />
           <section>
-            <div className="max-w-screen-lg mx-auto px-4 py-20 gap-12 text-gray-600 overflow-hidden md:px-4 md:flex">
+            <div className="max-w-screen-lg mx-auto px-4 md:py-20 gap-12 text-gray-600 overflow-hidden md:px-4 md:flex">
               <div className="flex-none space-y-5 max-w-xl">
                 <h1 className="text-4xl text-gray-800 font-extrabold sm:text-5xl md:pt-10">
-                  Spoonfuls of Delight: A Feast for Foodies
+                  A Culinary Canvas - Share Your Recipes, Inspire the World
                 </h1>
                 <p>
-                  Sed ut perspiciatis unde omnis iste natus voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae. Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit. Cupiditate, voluptas. Lorem, ipsum dolor sit amet
-                  consectetur adipisicing elit. Veniam illo officiis odio
-                  temporibus vero at eius facilis aspernatur ipsa
-                  necessitatibus?
+                  Unleash your culinary creativity with our recipe sharing app.
+                  Share unique recipes and discover mouth-watering creations
+                  from a vibrant community of food lovers. Whether a seasoned
+                  chef or passionate home cook, craft masterpieces, share
+                  step-by-step instructions, and inspire others. Join our
+                  community, exchange ideas, and embark on a delicious journey
+                  of shared culinary experiences.
                 </p>
                 <div className="flex items-center gap-x-3 sm:text-sm">
                   <Link
