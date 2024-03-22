@@ -16,7 +16,7 @@ export default function NewsLetter() {
           placeholder="Email address"
           className="py-2 px-4 rounded-lg md:w-1/2 border outline-none text-gray-800 shadow-sm"
         />
-        <button className="bg-[#B66055] py-2 px-4 rounded-lg shadow-md">
+        <button className="bg-[#B66055] text-white py-2 px-4 rounded-lg shadow-md">
           Subscribe
         </button>
       </div>
