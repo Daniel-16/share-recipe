@@ -13,15 +13,10 @@ export default function Brand({
   return (
     <div className="flex items-center justify-between py-5 md:block">
       <Link href="/">
-        {/* <Image
-          src="https://www.floatui.com/logo.svg"
-          width={120}
-          height={50}
-          alt="Float UI logo"
-        /> */}
         <svg
-          width="150"
-          height="65"
+          // width="150"
+          // height="65"
+          className="w-[23vh]"
           viewBox="0 0 210 73"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
