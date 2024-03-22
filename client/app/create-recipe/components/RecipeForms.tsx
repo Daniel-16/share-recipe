@@ -16,7 +16,7 @@ export default function RecipeForm() {
   };
   return (
     <>
-      <form className="space-y-14">
+      <form className="space-y-5 md:space-y-8 mb-10">
         <div>
           <label className="text-3xl text-gray-800 font-medium">
             Recipe Title:
@@ -43,12 +43,22 @@ export default function RecipeForm() {
               <Image
                 src={previewImgData}
                 alt="Preview"
-                className="w-auto h-[60vh] mx-auto object-contain mt-10 mb-10"
+                className="w-auto h-[60vh] mx-auto object-contain mt-5"
                 width="10"
                 height={"10"}
               />
             </div>
           )}
+        </div>
+        <div>
+          <label className="text-3xl text-gray-800 font-medium">
+            Description:
+          </label>
+          <textarea
+            className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#B66070] shadow-md rounded-lg duration-200"
+            required
+            placeholder="Introduce your recipe"
+          ></textarea>
         </div>
       </form>
     </>
