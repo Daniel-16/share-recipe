@@ -12,6 +12,7 @@ export default function RecipeForm() {
       setPreviewImgData(reader.result);
     };
     reader.readAsDataURL(file);
+    // console.log(previewImgData);
   };
   return (
     <>
