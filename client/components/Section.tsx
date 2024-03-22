@@ -25,10 +25,10 @@ export default function Section() {
           Share your Recipes
         </h1>
         <p className="text-gray-800">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ea
-          nobis deserunt doloremque libero, eos corrupti modi, similique atque
-          nulla itaque soluta repellendus accusamus! Omnis eos beatae enim rerum
-          delectus.
+          Share your culinary masterpieces with the world! Unleash your inner
+          chef and let your recipes inspire others. From delectable desserts to
+          savory delights, we&apos;re eager to discover your unique creations.
+          Don&apos;t hold back - showcase your cooking skills today!
         </p>
         <div className="flex items-center gap-x-3 sm:text-sm">
           <Link

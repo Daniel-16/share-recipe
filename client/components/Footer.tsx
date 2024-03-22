@@ -30,9 +30,10 @@ export default function Footer() {
           />
         </svg>
         <p className="leading-relaxed mt-2 text-[15px]">
-          Lorem Ipsum has been the industry standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book.
+          Discover a world of culinary delights, where flavors unite and
+          creativity thrives. Join our vibrant community of food enthusiasts and
+          embark on a delicious journey of shared recipes and culinary
+          inspiration.
         </p>
       </div>
       <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
