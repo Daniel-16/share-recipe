@@ -10,7 +10,7 @@ export default function RecipeDetails() {
       <Image
         src={foodImage}
         alt="Food"
-        className="w-auto h-[60vh] mx-auto object-contain "
+        className="w-auto h-[60vh] mx-auto object-contain"
         priority
       />
       <div className="w-[20vh]">
