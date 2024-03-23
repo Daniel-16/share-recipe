@@ -11,9 +11,9 @@ export default function CreateRecipe() {
           <h1 className="text-2xl text-gray-800 font-extrabold md:text-4xl">
             Create new recipe
           </h1>
-          <button className="bg-[#B66055] text-white py-2 px-4 rounded-lg shadow-md hover:bg-[#A7727D]">
+          {/* <button className="bg-[#B66055] text-white py-2 px-4 rounded-lg shadow-md hover:bg-[#A7727D]">
             Create recipe
-          </button>
+          </button> */}
         </div>
         <Separator className="mt-10 mb-10" />
         <RecipeForm />

@@ -20,7 +20,10 @@ export default function RecipeForm() {
   };
   return (
     <>
-      <form className="space-y-5 md:space-y-8 mb-10">
+      <form
+        className="space-y-5 md:space-y-8 mb-10"
+        onSubmit={(e) => e.preventDefault()}
+      >
         <div>
           <label className="text-3xl text-gray-800 font-medium">
             Recipe Title:
@@ -79,6 +82,12 @@ export default function RecipeForm() {
           <br />
           <CookingTime />
         </div>
+        <button
+          type="submit"
+          className="bg-[#B66055] text-white py-2 px-4 rounded-lg shadow-md hover:bg-[#A7727D] w-full active:bg-[#b66055]"
+        >
+          Create recipe
+        </button>
       </form>
     </>
   );
