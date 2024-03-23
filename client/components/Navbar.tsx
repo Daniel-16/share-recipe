@@ -86,7 +86,7 @@ export default function Navbar() {
               </li>
             </ul>
             <div className="md:space-x-2">
-              {!isAuthenticated ? (
+              {isAuthenticated ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger>
                     {!state ? (
@@ -213,7 +213,7 @@ export default function Navbar() {
                     <DropdownMenuSeparator />
                     <DropdownMenuItem
                       className="text-red-600"
-                      onClick={() => setIsAuthenticated(true)}
+                      // onClick={() => setIsAuthenticated(true)}
                     >
                       <svg
                         className="w-5 mr-2"
