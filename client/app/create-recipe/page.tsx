@@ -12,7 +12,7 @@ export default function CreateRecipe() {
             Create new recipe
           </h1>
           <button className="bg-[#B66055] text-white py-2 px-4 rounded-lg shadow-md hover:bg-[#A7727D]">
-            Save
+            Create recipe
           </button>
         </div>
         <Separator className="mt-10 mb-10" />
