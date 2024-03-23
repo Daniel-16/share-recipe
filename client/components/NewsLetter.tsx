@@ -1,6 +1,14 @@
+"use client";
+import { SectionContext } from "@/context/SectionContext";
+import { useContext } from "react";
+
 export default function NewsLetter() {
+  const { section3 } = useContext(SectionContext);
   return (
-    <div className="bg-[#FFF0ED] w-full py-20 mt-10 mx-auto text-center px-4">
+    <div
+      ref={section3}
+      className="bg-[#FFF0ED] w-full py-20 mt-10 mx-auto text-center px-4"
+    >
       <div className="">
         <h1 className="text-4xl text-gray-800 font-extrabold">
           Let&apos;s stay in touch

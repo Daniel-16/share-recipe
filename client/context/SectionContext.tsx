@@ -4,7 +4,7 @@ import { createContext, useRef, MutableRefObject, RefObject } from "react";
 interface SectionRefs {
   section1: RefObject<HTMLDivElement>;
   section2: RefObject<HTMLDivElement>;
-  section3: MutableRefObject<HTMLElement | null>;
+  section3: RefObject<HTMLDivElement>;
 }
 
 export const SectionContext = createContext<SectionRefs>({
@@ -20,7 +20,7 @@ export const SectionProvider = ({
 }) => {
   const section1 = useRef<HTMLDivElement>(null);
   const section2 = useRef<HTMLDivElement>(null);
-  const section3 = useRef<HTMLElement>(null);
+  const section3 = useRef<HTMLDivElement>(null);
 
   return (
     <SectionContext.Provider
