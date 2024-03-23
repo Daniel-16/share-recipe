@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import AddIngredients from "./AddIngredients";
 import AddInstructions from "./AddInstructions";
+import CookingTime from "./CookingTime";
 
 export default function RecipeForm() {
   const [previewImgData, setPreviewImgData] = useState<any>(null);
@@ -70,6 +71,13 @@ export default function RecipeForm() {
             Instructions:
           </label>
           <AddInstructions />
+        </div>
+        <div>
+          <label className="text-3xl text-gray-800 font-medium">
+            Cooking time:
+          </label>
+          <br />
+          <CookingTime />
         </div>
       </form>
     </>
