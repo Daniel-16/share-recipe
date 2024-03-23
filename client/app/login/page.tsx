@@ -41,7 +41,7 @@ export default function Login() {
         document.cookie = `currentUser=${response.data.token}; path=/; secure-${
           process.env.NODE_ENV === "production"
         }; sameSite=strict`;
-        router.push("/recipes");
+        router.push("/");
         setIsAuthenticated(true);
       }
       console.log(response.data);

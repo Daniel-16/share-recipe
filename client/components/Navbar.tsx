@@ -213,7 +213,12 @@ export default function Navbar() {
                     <DropdownMenuSeparator />
                     <DropdownMenuItem
                       className="text-red-600"
-                      // onClick={() => setIsAuthenticated(true)}
+                      onClick={() => {
+                        setIsAuthenticated(false);
+                        document.cookie = `currentUser=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; secure-${
+                          process.env.NODE_ENV === "production"
+                        }; sameSite=strict`;
+                      }}
                     >
                       <svg
                         className="w-5 mr-2"
