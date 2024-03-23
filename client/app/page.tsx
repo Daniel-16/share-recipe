@@ -38,7 +38,7 @@ function Home() {
                 </p>
                 <div className="flex items-center gap-x-3 sm:text-sm">
                   <Link
-                    href=""
+                    href="/recipes"
                     className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex"
                   >
                     Explore recipes
