@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useState } from "react";
 import AddIngredients from "./AddIngredients";
+import AddInstructions from "./AddInstructions";
 
 export default function RecipeForm() {
   const [previewImgData, setPreviewImgData] = useState<any>(null);
@@ -64,6 +65,12 @@ export default function RecipeForm() {
           ></textarea>
         </div>
         <AddIngredients />
+        <div>
+          <label className="text-3xl text-gray-800 font-medium">
+            Instructions:
+          </label>
+          <AddInstructions />
+        </div>
       </form>
     </>
   );
