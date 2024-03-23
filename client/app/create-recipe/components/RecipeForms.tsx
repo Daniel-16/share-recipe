@@ -37,6 +37,7 @@ export default function RecipeForm() {
             id="picture"
             accept=".jpg, .webp, .jpeg, .png"
             onChange={handleImageChange}
+            required
           />
           {previewImgData && (
             <div>
