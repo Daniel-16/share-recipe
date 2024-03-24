@@ -12,11 +12,13 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { AuthContext } from "@/context/AuthContext";
+// import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [state, setState] = useState(false);
   const { section1, section2, section3 } = useContext(SectionContext);
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  // const router = useRouter();
 
   const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
     if (ref.current) {
@@ -211,31 +213,33 @@ export default function Navbar() {
                       Settings
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem
-                      className="text-red-600"
-                      onClick={() => {
-                        setIsAuthenticated(false);
-                        document.cookie = `currentUser=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; secure-${
-                          process.env.NODE_ENV === "production"
-                        }; sameSite=strict`;
-                      }}
-                    >
-                      <svg
-                        className="w-5 mr-2"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                    <Link href={"/login"}>
+                      <DropdownMenuItem
+                        className="text-red-600"
+                        onClick={() => {
+                          setIsAuthenticated(false);
+                          document.cookie = `currentUser=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; secure-${
+                            process.env.NODE_ENV === "production"
+                          }; sameSite=strict`;
+                        }}
                       >
-                        <path
-                          d="M14 20H6C4.89543 20 4 19.1046 4 18L4 6C4 4.89543 4.89543 4 6 4H14M10 12H21M21 12L18 15M21 12L18 9"
-                          stroke="rgb(220 38 38 / var(--tw-text-opacity)"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      Sign out
-                    </DropdownMenuItem>
+                        <svg
+                          className="w-5 mr-2"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14 20H6C4.89543 20 4 19.1046 4 18L4 6C4 4.89543 4.89543 4 6 4H14M10 12H21M21 12L18 15M21 12L18 9"
+                            stroke="rgb(220 38 38 / var(--tw-text-opacity)"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        Sign out
+                      </DropdownMenuItem>
+                    </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
