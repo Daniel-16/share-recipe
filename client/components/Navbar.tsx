@@ -224,7 +224,7 @@ export default function Navbar() {
                           document.cookie = `currentUser=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; secure-${
                             process.env.NODE_ENV === "production"
                           }; sameSite=strict`;
-                          localStorage.clear();
+                          // localStorage.clear();
                         }}
                       >
                         <svg

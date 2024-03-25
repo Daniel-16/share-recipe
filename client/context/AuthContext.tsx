@@ -16,7 +16,19 @@ const AuthContext = createContext<AuthContextData>({
 });
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const isBrowser = typeof window !== "undefined";
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
+    isBrowser
+      ? () => {
+          const storedValue = localStorage.getItem("isAuthenticated");
+          return storedValue ? JSON.parse(storedValue) : false;
+        }
+      : false
+  );
+
+  useEffect(() => {
+    localStorage.setItem("isAuthenticated", JSON.stringify(isAuthenticated));
+  }, [isAuthenticated]);
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
