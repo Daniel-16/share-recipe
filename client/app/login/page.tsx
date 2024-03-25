@@ -44,9 +44,9 @@ export default function Login() {
           process.env.NODE_ENV === "production"
         }; sameSite=strict`;
         router.push("/");
-        setIsAuthenticated(true);
         const { username } = response.data.user;
         setUsername(username);
+        setIsAuthenticated(true);
       }
       console.log(response.data);
     } catch (error) {
