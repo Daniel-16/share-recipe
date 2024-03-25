@@ -13,11 +13,13 @@ import {
 } from "./ui/dropdown-menu";
 import { AuthContext } from "@/context/AuthContext";
 // import { useRouter } from "next/navigation";
+import { UserNameContext } from "@/context/UsernameContext";
 
 export default function Navbar() {
   const [state, setState] = useState(false);
   const { section1, section2, section3 } = useContext(SectionContext);
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { username, setUsername } = useContext(UserNameContext);
   // const router = useRouter();
 
   const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
@@ -93,11 +95,11 @@ export default function Navbar() {
                   <DropdownMenuTrigger>
                     {!state ? (
                       <div className="rounded-full py-2 px-4 bg-gray-800 text-white text-lg font-bold">
-                        D
+                        {username.charAt(0).toUpperCase()}
                       </div>
                     ) : (
                       <div className="bg-gray-800 text-white py-2 pr-2 pl-2 rounded-lg">
-                        username
+                        {username}
                       </div>
                     )}
                   </DropdownMenuTrigger>
@@ -218,6 +220,7 @@ export default function Navbar() {
                         className="text-red-600"
                         onClick={() => {
                           setIsAuthenticated(false);
+                          setUsername("");
                           document.cookie = `currentUser=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; secure-${
                             process.env.NODE_ENV === "production"
                           }; sameSite=strict`;
