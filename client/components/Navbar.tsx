@@ -33,7 +33,7 @@ export default function Navbar() {
   };
 
   return (
-    <header>
+    <>
       <div className={`md:hidden ${state ? "mx-2 pb-5" : "hidden"}`}>
         <Brand state={state} setState={setState} />
       </div>
@@ -294,6 +294,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </header>
+    </>
   );
 }

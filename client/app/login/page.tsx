@@ -99,7 +99,10 @@ export default function Login() {
                   value={password}
                 />
               </div>
-              <button className="w-full px-4 py-2 text-white font-medium bg-[#a7727d] hover:bg-[#B66070] active:bg-[#a7727d] rounded-lg duration-150">
+              <button
+                type="submit"
+                className="w-full px-4 py-2 text-white font-medium bg-[#a7727d] hover:bg-[#B66070] active:bg-[#a7727d] rounded-lg duration-150"
+              >
                 Sign in
               </button>
               <div className="text-center">
