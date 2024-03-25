@@ -35,7 +35,7 @@ This is a simple recipe sharing application api built with Node.js, Express, and
    ```
    npm run dev
    ```
-   The server would run on `http://localhost:6000`
+   The server would run on `http://localhost:7000`
 
 ## API Endpoints
 
