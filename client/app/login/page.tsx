@@ -47,11 +47,11 @@ export default function Login() {
         document.cookie = `currentUser=${response.data.token}; path=/; secure-${
           process.env.NODE_ENV === "production"
         }; sameSite=strict`;
-        router.push("/");
         const { username } = response.data.user;
         setUsername(username);
         setIsAuthenticated("true");
         setLoading(false);
+        router.push("/");
       }
       console.log(response.data);
     } catch (error) {
