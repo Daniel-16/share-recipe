@@ -4,7 +4,7 @@ import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { UsernameProvider } from "@/context/UsernameContext";
 import { Suspense } from "react";
-import Loading from "./loading";
+// import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,11 +27,9 @@ export default function RootLayout({
             "linear-gradient(143.6deg, rgba(192, 132, 252, 0)20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)",
         }}
       >
-        <Suspense fallback={<Loading />}>
-          <AuthProvider>
-            <UsernameProvider>{children}</UsernameProvider>
-          </AuthProvider>
-        </Suspense>
+        <AuthProvider>
+          <UsernameProvider>{children}</UsernameProvider>
+        </AuthProvider>
       </body>
     </html>
   );

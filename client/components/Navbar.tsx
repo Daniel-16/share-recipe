@@ -1,7 +1,13 @@
 "use client";
 import Link from "next/link";
 import Brand from "./BrandLogo";
-import { useState, useContext, MutableRefObject, RefObject } from "react";
+import {
+  useState,
+  useContext,
+  MutableRefObject,
+  RefObject,
+  Suspense,
+} from "react";
 import { SectionContext } from "@/context/SectionContext";
 import {
   DropdownMenu,
@@ -62,20 +68,24 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="text-gray-700 hover:text-gray-900">
-                <div
-                  className="block hover:cursor-pointer"
-                  onClick={() => scrollToSection(section2)}
-                >
-                  Recipes
-                </div>
+                <Link href={"/recipes"}>
+                  <div
+                    className="block hover:cursor-pointer"
+                    // onClick={() => scrollToSection(section2)}
+                  >
+                    Recipes
+                  </div>
+                </Link>
               </li>
               <li className="text-gray-700 hover:text-gray-900">
-                <div
-                  className="block hover:cursor-pointer"
-                  onClick={() => scrollToSection(section1)}
-                >
-                  Add recipes
-                </div>
+                <Link href={"/create-recipe"}>
+                  <div
+                    className="block hover:cursor-pointer"
+                    // onClick={() => scrollToSection(section1)}
+                  >
+                    Add recipes
+                  </div>
+                </Link>
               </li>
               <li className="text-gray-700 hover:text-gray-900">
                 <div
