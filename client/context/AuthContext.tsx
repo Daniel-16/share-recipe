@@ -19,7 +19,6 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState<string>("");
   useEffect(() => {
     const authValue = localStorage.getItem("isAuthenticated");
-    console.log(authValue);
     if (authValue) {
       setIsAuthenticated("true");
     }
