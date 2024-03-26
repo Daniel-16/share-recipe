@@ -2,8 +2,8 @@
 import { createContext, useState, ReactNode, useEffect } from "react";
 
 interface AuthContextData {
-  isAuthenticated: boolean;
-  setIsAuthenticated: (value: boolean) => void;
+  isAuthenticated: string;
+  setIsAuthenticated: (value: string) => void;
 }
 
 interface AuthProviderProps {
@@ -11,23 +11,22 @@ interface AuthProviderProps {
 }
 
 const AuthContext = createContext<AuthContextData>({
-  isAuthenticated: false,
+  isAuthenticated: "",
   setIsAuthenticated: () => {},
 });
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
-  const isBrowser = typeof window !== "undefined";
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
-    isBrowser
-      ? () => {
-          const storedValue = localStorage.getItem("isAuthenticated");
-          return storedValue ? JSON.parse(storedValue) : false;
-        }
-      : false
-  );
+  const [isAuthenticated, setIsAuthenticated] = useState<string>("");
+  useEffect(() => {
+    const authValue = localStorage.getItem("isAuthenticated");
+    console.log(authValue);
+    if (authValue) {
+      setIsAuthenticated("true");
+    }
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem("isAuthenticated", JSON.stringify(isAuthenticated));
+    localStorage.setItem("isAuthenticated", isAuthenticated);
   }, [isAuthenticated]);
 
   return (

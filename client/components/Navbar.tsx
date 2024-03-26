@@ -90,7 +90,7 @@ export default function Navbar() {
               </li>
             </ul>
             <div className="md:space-x-2">
-              {isAuthenticated ? (
+              {isAuthenticated.includes("true") ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger>
                     {!state ? (
@@ -219,7 +219,7 @@ export default function Navbar() {
                       <DropdownMenuItem
                         className="text-red-600"
                         onClick={() => {
-                          setIsAuthenticated(false);
+                          setIsAuthenticated("false");
                           setUsername("");
                           document.cookie = `currentUser=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; secure-${
                             process.env.NODE_ENV === "production"

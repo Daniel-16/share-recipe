@@ -46,7 +46,7 @@ export default function Login() {
         router.push("/");
         const { username } = response.data.user;
         setUsername(username);
-        setIsAuthenticated(true);
+        setIsAuthenticated("true");
       }
       console.log(response.data);
     } catch (error) {

@@ -36,7 +36,7 @@ export default function Signup() {
           process.env.NODE_ENV === "production"
         }; sameSite=strict`;
         router.push("/");
-        setIsAuthenticated(true);
+        setIsAuthenticated("true");
         console.log(response.data);
       }
     } catch (error) {

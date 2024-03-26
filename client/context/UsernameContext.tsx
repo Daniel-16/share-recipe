@@ -22,7 +22,6 @@ const UsernameProvider = ({ children }: UsernameProviderProps) => {
     if (storedUsername) {
       setUsername(storedUsername);
     }
-    localStorage.clear();
   }, []);
 
   useEffect(() => {
