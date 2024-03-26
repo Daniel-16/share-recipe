@@ -13,6 +13,12 @@ import NewsLetterModel from "../models/NewsletterModel.js";
 export const createUser = async (req, res) => {
   // Data from the request body
   const { username, email, password } = req.body;
+  if (password.length < 6) {
+    return res.status(400).json({
+      success: false,
+      error: "Password must be at least 6 characters long",
+    });
+  }
   try {
     const user = await UserModel.create({
       username,
