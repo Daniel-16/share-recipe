@@ -4,10 +4,12 @@ import connectDB from "./db.js";
 import "dotenv/config.js";
 import router from "./routes/routes.js";
 import { errorMiddleware } from "./middleware/errorMiddleware.js";
+import bodyParser from "body-parser";
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use("/api", router);
 app.use(errorMiddleware);
 

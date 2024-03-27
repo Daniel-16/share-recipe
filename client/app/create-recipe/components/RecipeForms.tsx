@@ -1,29 +1,62 @@
 "use client";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import AddIngredients from "./AddIngredients";
 import AddInstructions from "./AddInstructions";
 import CookingTime from "./CookingTime";
+import Axios from "axios";
+import Cookies from "js-cookie";
 
 export default function RecipeForm() {
-  const [previewImgData, setPreviewImgData] = useState<any>(null);
+  const [recipeTitle, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [ingredients, setIngredients] = useState([""]);
+  const [instructions, setInstructions] = useState([""]);
+  const [hours, setHours] = useState("");
+  const [minutes, setMinutes] = useState("");
+  const [previewImgData, setPreviewImgData] = useState<string | null>(null);
 
-  const handleImageChange = (e: any) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onload = () => {
-      setPreviewImgData(reader.result);
-    };
-    reader.readAsDataURL(file);
-    // console.log(previewImgData);
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setPreviewImgData(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
   };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const createRecipe = await Axios.post(
+        "http://localhost:7000/api/createRecipe",
+        {
+          title: recipeTitle,
+          imageUrl: previewImgData,
+          timeFrame: { hours, minutes },
+          ingredients,
+          instructions,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${Cookies.get("currentUser")}`,
+            // "Content-Encoding": "gzip",
+          },
+        }
+      );
+      console.log(createRecipe);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
-      <form
-        className="space-y-5 md:space-y-8 mb-10"
-        onSubmit={(e) => e.preventDefault()}
-      >
+      <form className="space-y-5 md:space-y-8 mb-10" onSubmit={handleSubmit}>
         <div>
           <label className="text-3xl text-gray-800 font-medium">
             Recipe Title:
@@ -33,6 +66,8 @@ export default function RecipeForm() {
             required
             className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#B66070] shadow-md rounded-lg duration-200"
             placeholder="Chocolate Chip Cookies"
+            value={recipeTitle}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div>
@@ -66,21 +101,34 @@ export default function RecipeForm() {
             className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#B66070] shadow-md rounded-lg duration-200"
             required
             placeholder="Introduce your recipe"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-        <AddIngredients />
+        <AddIngredients
+          ingredients={ingredients}
+          setIngredients={setIngredients}
+        />
         <div>
           <label className="text-3xl text-gray-800 font-medium">
             Instructions:
           </label>
-          <AddInstructions />
+          <AddInstructions
+            instructions={instructions}
+            setInstructions={setInstructions}
+          />
         </div>
         <div>
           <label className="text-3xl text-gray-800 font-medium">
             Cooking time:
           </label>
           <br />
-          <CookingTime />
+          <CookingTime
+            hours={hours}
+            minutes={minutes}
+            setHours={setHours}
+            setMinutes={setMinutes}
+          />
         </div>
         <button
           type="submit"
