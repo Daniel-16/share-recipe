@@ -24,10 +24,13 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.pre("save", async function (next) {
   const email = this.email;
-  const user = await UserModel.findOne({ email });
+  const username = this.username;
+  const user = await UserModel.findOne({ username, email });
   try {
     if (user) {
-      const emailExists = new Error("Email is already in use");
+      const emailExists = new Error(
+        "An account with this username or email already exist!"
+      );
       return next(emailExists);
     }
   } catch (error) {
