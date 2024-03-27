@@ -1,8 +1,14 @@
 "use client";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
-export default function AddInstructions() {
-  const [instructions, setInstructions] = useState([""]);
+export default function AddInstructions({
+  instructions,
+  setInstructions,
+}: {
+  instructions: string[];
+  setInstructions: Dispatch<SetStateAction<string[]>>;
+}) {
+  // const [instructions, setInstructions] = useState([""]);
 
   const handleAddInstruction = () => {
     setInstructions([...instructions, ""]);
@@ -21,7 +27,7 @@ export default function AddInstructions() {
   };
   return (
     <>
-      {instructions.map((instruction, index) => (
+      {instructions.map((instruction: any, index: any) => (
         <div key={index}>
           <div className="inline-flex items-center justify-center gap-3 w-full">
             <input

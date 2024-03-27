@@ -1,8 +1,15 @@
 "use client";
-import { useState } from "react";
 
-export default function AddIngredients() {
-  const [ingredients, setIngredients] = useState([""]);
+import { Dispatch, SetStateAction } from "react";
+
+export default function AddIngredients({
+  ingredients,
+  setIngredients,
+}: {
+  ingredients: string[];
+  setIngredients: Dispatch<SetStateAction<string[]>>;
+}) {
+  // const [ingredients, setIngredients] = useState([""]);
 
   const handleAddIngredient = () => {
     setIngredients([...ingredients, ""]);
@@ -25,7 +32,7 @@ export default function AddIngredients() {
         <label className="text-3xl text-gray-800 font-medium">
           Ingredients:
         </label>
-        {ingredients.map((ingredient, index) => (
+        {ingredients.map((ingredient: any, index: any) => (
           <div key={index}>
             <div className="inline-flex items-center justify-center gap-3 w-full">
               <input
