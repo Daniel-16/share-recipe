@@ -59,7 +59,12 @@ export default function Login() {
       console.log(error);
       if (error instanceof AxiosError) {
         console.log(error.response?.data.error);
-        setError(error.response?.data.error);
+        console.log(error.message);
+        if (error.message.toLowerCase() === "network error") {
+          setError(error.message);
+        } else {
+          setError(error.response?.data.error);
+        }
       }
     }
   };
