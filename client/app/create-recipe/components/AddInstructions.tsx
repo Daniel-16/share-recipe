@@ -8,8 +8,6 @@ export default function AddInstructions({
   instructions: string[];
   setInstructions: Dispatch<SetStateAction<string[]>>;
 }) {
-  // const [instructions, setInstructions] = useState([""]);
-
   const handleAddInstruction = () => {
     setInstructions([...instructions, ""]);
   };
