@@ -44,7 +44,6 @@ export default function RecipeForm() {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${Cookies.get("currentUser")}`,
-            // "Content-Encoding": "gzip",
           },
         }
       );
