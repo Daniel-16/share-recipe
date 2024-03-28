@@ -36,6 +36,7 @@ export default function RecipeForm() {
         {
           title: recipeTitle,
           imageUrl: previewImgData,
+          description,
           timeFrame: { hours, minutes },
           ingredients,
           instructions,

@@ -9,7 +9,8 @@ import UserModel from "../models/UserModel.js";
  */
 export const createRecipe = async (req, res) => {
   // Data extraction from the request body
-  const { title, imageUrl, timeFrame, ingredients, instructions } = req.body;
+  const { title, imageUrl, description, timeFrame, ingredients, instructions } =
+    req.body;
   // Extracting the recipeOwnerId from the request paramaters
   const recipeOwnerId = req.user._id;
   try {
@@ -25,6 +26,7 @@ export const createRecipe = async (req, res) => {
       recipeOwner: user.username,
       title,
       imageUrl,
+      description,
       timeFrame,
       ingredients,
       instructions,
