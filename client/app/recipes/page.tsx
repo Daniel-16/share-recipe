@@ -108,22 +108,45 @@ export default function Home() {
                       ? `${recipe.description.slice(0, 113)}...`
                       : recipe.description}
                   </p>
-                  <div className="inline-flex items-center space-x-1">
-                    <svg
-                      fill="#7e525f"
-                      className="w-5 flex-shrink-0"
-                      viewBox="0 0 512 512"
-                      id="_x30_1"
-                      version="1.1"
-                      xmlSpace="preserve"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                    >
-                      <path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M256,90  c37.02,0,67.031,35.468,67.031,79.219S293.02,248.438,256,248.438s-67.031-35.468-67.031-79.219S218.98,90,256,90z M369.46,402  H142.54c-11.378,0-20.602-9.224-20.602-20.602C121.938,328.159,181.959,285,256,285s134.062,43.159,134.062,96.398  C390.062,392.776,380.839,402,369.46,402z" />
-                    </svg>
-                    <p className="font-semibold text-md">
-                      {recipe.recipeOwner}
-                    </p>
+                  <div className="flex items-end space-x-2 justify-between pt-3">
+                    <div className="inline-flex items-center space-x-1">
+                      <svg
+                        fill="#7e525f"
+                        className="w-5 flex-shrink-0"
+                        viewBox="0 0 512 512"
+                        id="_x30_1"
+                        version="1.1"
+                        xmlSpace="preserve"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M256,90  c37.02,0,67.031,35.468,67.031,79.219S293.02,248.438,256,248.438s-67.031-35.468-67.031-79.219S218.98,90,256,90z M369.46,402  H142.54c-11.378,0-20.602-9.224-20.602-20.602C121.938,328.159,181.959,285,256,285s134.062,43.159,134.062,96.398  C390.062,392.776,380.839,402,369.46,402z" />
+                      </svg>
+                      <p className="font-semibold text-sm">
+                        {recipe.recipeOwner}
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center justify-center">
+                      <svg
+                        className="w-6"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12.5 8V12.5L15.5 15.5M20.5 12.5C20.5 16.9183 16.9183 20.5 12.5 20.5C8.08172 20.5 4.5 16.9183 4.5 12.5C4.5 8.08172 8.08172 4.5 12.5 4.5C16.9183 4.5 20.5 8.08172 20.5 12.5Z"
+                          stroke="#7e525f"
+                          strokeWidth="1.2"
+                        />
+                      </svg>
+                      <p className="font-semibold text-xs">
+                        {recipe.timeFrame.hours < 1
+                          ? `${recipe.timeFrame.minutes} min`
+                          : recipe.timeFrame.hours === 1
+                          ? `${recipe.timeFrame.hours} hour, ${recipe.timeFrame.minutes} min`
+                          : `${recipe.timeFrame.hours} hours, ${recipe.timeFrame.minutes} min`}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </li>
