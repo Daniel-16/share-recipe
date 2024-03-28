@@ -110,6 +110,18 @@ export default function Login() {
               <div>
                 <label className="font-medium">Password</label>
                 <div className="relative">
+                  <input
+                    type={passwordHidden ? "password" : "text"}
+                    required
+                    className={
+                      errorMessage !== null
+                        ? "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border border-red-500 focus:border-[#7e525f] shadow-md rounded-lg duration-200"
+                        : "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border focus:border-[#7e525f] shadow-md rounded-lg duration-200"
+                    }
+                    placeholder="Enter a secure password"
+                    onChange={handlePassword}
+                    value={password}
+                  />
                   <button
                     type="button"
                     className="text-gray-400 absolute right-3 inset-y-4 my-auto active:text-gray-600"
@@ -152,18 +164,6 @@ export default function Login() {
                       </svg>
                     )}
                   </button>
-                  <input
-                    type={passwordHidden ? "password" : "text"}
-                    required
-                    className={
-                      errorMessage !== null
-                        ? "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border border-red-500 focus:border-[#7e525f] shadow-md rounded-lg duration-200"
-                        : "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border focus:border-[#7e525f] shadow-md rounded-lg duration-200"
-                    }
-                    placeholder="Enter a secure password"
-                    onChange={handlePassword}
-                    value={password}
-                  />
                 </div>
               </div>
               {errorMessage !== null && (
