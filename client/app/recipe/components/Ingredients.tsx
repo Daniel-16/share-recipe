@@ -5,7 +5,7 @@ export default function Ingredients() {
         <li className="">
           <div className="inline-flex items-center space-x-2">
             <svg
-              fill="#b66055"
+              fill="#7e525f"
               className="w-6"
               viewBox="0 0 128 128"
               id="Layer_1"
@@ -25,7 +25,7 @@ export default function Ingredients() {
         <li className="">
           <div className="inline-flex items-center space-x-2">
             <svg
-              fill="#b66055"
+              fill="#7e525f"
               className="w-6"
               viewBox="0 0 128 128"
               id="Layer_1"
@@ -45,7 +45,7 @@ export default function Ingredients() {
         <li className="">
           <div className="inline-flex items-center space-x-2">
             <svg
-              fill="#b66055"
+              fill="#7e525f"
               className="w-6"
               viewBox="0 0 128 128"
               id="Layer_1"
@@ -65,7 +65,7 @@ export default function Ingredients() {
         <li className="">
           <div className="inline-flex items-center space-x-2">
             <svg
-              fill="#b66055"
+              fill="#7e525f"
               className="w-6"
               viewBox="0 0 128 128"
               id="Layer_1"

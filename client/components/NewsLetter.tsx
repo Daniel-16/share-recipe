@@ -91,8 +91,8 @@ export default function NewsLetter() {
             type="submit"
             className={
               loading
-                ? "bg-[#B66055] text-white py-2 px-4 rounded-lg shadow-md hover:cursor-not-allowed"
-                : "bg-[#B66055] text-white py-2 px-4 rounded-lg shadow-md"
+                ? "bg-[#7e525f] hover:bg-[#986673] text-white py-2 px-4 rounded-lg shadow-md hover:cursor-not-allowed"
+                : "bg-[#7e525f] hover:bg-[#986673] text-white py-2 px-4 rounded-lg shadow-md"
             }
             disabled={loading && true}
           >
