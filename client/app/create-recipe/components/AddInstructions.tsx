@@ -30,7 +30,7 @@ export default function AddInstructions({
           <div className="inline-flex items-center justify-center gap-3 w-full">
             <input
               type="text"
-              className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#b66070] shadow-md rounded-lg duration-200"
+              className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#7e525f] shadow-md rounded-lg duration-200"
               placeholder="Add instructions"
               value={instruction}
               onChange={(e) => handleInstructionChange(index, e.target.value)}
@@ -39,7 +39,7 @@ export default function AddInstructions({
             {instructions.length > 1 && (
               <button
                 type="button"
-                className="bg-[#b66055] rounded-full"
+                className="bg-[#7e525f] rounded-full"
                 onClick={() => handleRemoveInstruction(index)}
               >
                 <svg
@@ -65,7 +65,7 @@ export default function AddInstructions({
         </div>
       ))}
       <button
-        className="inline-flex items-center text-[#b66055] mt-2"
+        className="inline-flex items-center text-[#7e525f] mt-2"
         onClick={handleAddInstruction}
         type="button"
       >
@@ -81,7 +81,7 @@ export default function AddInstructions({
               <g>
                 <line
                   fill="none"
-                  stroke="#b66055"
+                  stroke="#7e525f"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
@@ -93,7 +93,7 @@ export default function AddInstructions({
 
                 <line
                   fill="none"
-                  stroke="#b66055"
+                  stroke="#7e525f"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"

@@ -63,7 +63,7 @@ export default function RecipeForm() {
           <input
             type="text"
             required
-            className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#B66070] shadow-md rounded-lg duration-200"
+            className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#7e525f] shadow-md rounded-lg duration-200"
             placeholder="Chocolate Chip Cookies"
             value={recipeTitle}
             onChange={(e) => setTitle(e.target.value)}
@@ -97,7 +97,7 @@ export default function RecipeForm() {
             Description:
           </label>
           <textarea
-            className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#B66070] shadow-md rounded-lg duration-200"
+            className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#7e525f] shadow-md rounded-lg duration-200"
             required
             placeholder="Introduce your recipe"
             value={description}
@@ -131,7 +131,7 @@ export default function RecipeForm() {
         </div>
         <button
           type="submit"
-          className="bg-[#B66055] text-white py-2 px-4 rounded-lg shadow-md hover:bg-[#A7727D] w-full active:bg-[#b66055]"
+          className="bg-[#7e525f] text-white py-2 px-4 rounded-lg shadow-md hover:bg-[#986673] w-full active:bg-[##96493f]"
         >
           Create recipe
         </button>
