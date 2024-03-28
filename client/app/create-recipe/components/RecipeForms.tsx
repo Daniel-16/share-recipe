@@ -57,7 +57,7 @@ export default function RecipeForm() {
     <>
       <form className="space-y-5 md:space-y-8 mb-10" onSubmit={handleSubmit}>
         <div>
-          <label className="text-3xl text-gray-800 font-medium">
+          <label className="text-xl md:text-3xl text-gray-800 font-medium">
             Recipe Title:
           </label>
           <input
@@ -70,7 +70,7 @@ export default function RecipeForm() {
           />
         </div>
         <div>
-          <label className="text-3xl text-gray-800 font-medium">
+          <label className="text-xl md:text-3xl text-gray-800 font-medium">
             Recipe Image:
           </label>
           <Input
@@ -93,7 +93,7 @@ export default function RecipeForm() {
           )}
         </div>
         <div>
-          <label className="text-3xl text-gray-800 font-medium">
+          <label className="text-xl md:text-3xl text-gray-800 font-medium">
             Description:
           </label>
           <textarea
@@ -109,7 +109,7 @@ export default function RecipeForm() {
           setIngredients={setIngredients}
         />
         <div>
-          <label className="text-3xl text-gray-800 font-medium">
+          <label className="text-xl md:text-3xl text-gray-800 font-medium">
             Instructions:
           </label>
           <AddInstructions
@@ -118,7 +118,7 @@ export default function RecipeForm() {
           />
         </div>
         <div>
-          <label className="text-3xl text-gray-800 font-medium">
+          <label className="text-xl md:text-3xl text-gray-800 font-medium">
             Cooking time:
           </label>
           <br />

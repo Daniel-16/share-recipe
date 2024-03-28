@@ -29,7 +29,7 @@ export default function AddIngredients({
   return (
     <>
       <div>
-        <label className="text-3xl text-gray-800 font-medium">
+        <label className="text-xl md:text-3xl text-gray-800 font-medium">
           Ingredients:
         </label>
         {ingredients.map((ingredient: any, index: any) => (

@@ -15,7 +15,7 @@ export default function CreateRecipe() {
             Create recipe
           </button> */}
         </div>
-        <Separator className="mt-10 mb-10" />
+        <Separator className="my-5" />
         <RecipeForm />
       </div>
     </>
