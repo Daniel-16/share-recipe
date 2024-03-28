@@ -19,6 +19,10 @@ const RecipeSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    description: {
+      type: String,
+      required: true,
+    },
     timeFrame: {
       hours: { type: Number, default: 0 },
       minutes: { type: Number, required: true },
