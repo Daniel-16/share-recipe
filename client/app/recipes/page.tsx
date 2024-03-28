@@ -9,11 +9,11 @@ export default function Home() {
     <>
       <Navbar />
       <div className="max-w-screen-lg mx-auto px-5">
-        <h1 className="text-4xl sm:text-5xl text-gray-800 font-extrabold py-5">
+        <h1 className="text-3xl md:text-4xl text-gray-800 font-extrabold py-5">
           Explore Recipes
         </h1>
         <ul className="grid gap-x-8 gap-y-10 sm:grid-cols-1 md:grid-cols-3">
-          <li className="w-full mx-auto group sm:max-w-sm border rounded-[15px] hover:shadow-md duration-200">
+          <li className="w-full mx-auto group sm:max-w-sm border border-[#dcc5c9] rounded-[15px] hover:shadow-md duration-200">
             <Image
               src={recipeImage}
               priority
@@ -29,7 +29,7 @@ export default function Home() {
                   Italian pasta
                 </h3>
                 <div
-                  className="flex border px-2 py-1 rounded-lg items-center space-x-2 hover:shadow-md cursor-pointer"
+                  className="flex border border-[#dcc5c9] px-2 py-1 rounded-lg items-center space-x-2 hover:shadow-md cursor-pointer"
                   // onClick={() => handleVotes(1)}
                 >
                   <svg
@@ -46,7 +46,7 @@ export default function Home() {
                       fill="#7e525f"
                     ></path>
                   </svg>
-                  <span className="text-gray-800text-sm">
+                  <span className="text-gray-800 text-sm">
                     {/* {votes[1] || 0} votes */}
                     110 votes
                   </span>
@@ -88,7 +88,7 @@ export default function Home() {
                   Italian pasta
                 </h3>
                 <div
-                  className="flex border px-2 py-1 rounded-lg items-center space-x-2 hover:shadow-md cursor-pointer"
+                  className="flex border border-[#dcc5c9] px-2 py-1 rounded-lg items-center space-x-2 hover:shadow-md cursor-pointer"
                   // onClick={() => handleVotes(1)}
                 >
                   <svg
@@ -105,7 +105,7 @@ export default function Home() {
                       fill="#7e525f"
                     ></path>
                   </svg>
-                  <span className="text-gray-800text-sm">
+                  <span className="text-gray-800 text-sm">
                     {/* {votes[1] || 0} votes */}
                     110 votes
                   </span>
@@ -148,7 +148,7 @@ export default function Home() {
                   Italian pasta
                 </h3>
                 <div
-                  className="flex border px-2 py-1 rounded-lg items-center space-x-2 hover:shadow-md cursor-pointer"
+                  className="flex border border-[#dcc5c9] px-2 py-1 rounded-lg items-center space-x-2 hover:shadow-md cursor-pointer"
                   // onClick={() => handleVotes(1)}
                 >
                   <svg
@@ -165,7 +165,7 @@ export default function Home() {
                       fill="#7e525f"
                     ></path>
                   </svg>
-                  <span className="text-gray-800text-sm">
+                  <span className="text-gray-800 text-sm">
                     {/* {votes[1] || 0} votes */}
                     110 votes
                   </span>
@@ -208,7 +208,7 @@ export default function Home() {
                   Italian pasta
                 </h3>
                 <div
-                  className="flex border px-2 py-1 rounded-lg items-center space-x-2 hover:shadow-md cursor-pointer"
+                  className="flex border border-[#dcc5c9] px-2 py-1 rounded-lg items-center space-x-2 hover:shadow-md cursor-pointer"
                   // onClick={() => handleVotes(1)}
                 >
                   <svg
@@ -225,7 +225,7 @@ export default function Home() {
                       fill="#7e525f"
                     ></path>
                   </svg>
-                  <span className="text-gray-800text-sm">
+                  <span className="text-gray-800 text-sm">
                     {/* {votes[1] || 0} votes */}
                     110 votes
                   </span>
