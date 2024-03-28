@@ -11,7 +11,7 @@ export default function CookingTime({
       <div className="inline-flex items-center gap-4 w-full">
         <input
           type="number"
-          className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#B66070] shadow-md rounded-lg duration-200"
+          className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#7e525f] shadow-md rounded-lg duration-200"
           placeholder="Hours"
           value={hours}
           onChange={(e) => setHours(e.target.value)}
@@ -19,7 +19,7 @@ export default function CookingTime({
         <input
           type="number"
           required
-          className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#B66070] shadow-md rounded-lg duration-200"
+          className="w-full mt-2 px-3 py-3 text-gray-800 outline-none border focus:border-[#7e525f] shadow-md rounded-lg duration-200"
           placeholder="Minutes"
           value={minutes}
           onChange={(e) => setMinutes(e.target.value)}
