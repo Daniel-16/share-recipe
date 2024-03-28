@@ -77,7 +77,7 @@ export default function Signup() {
                 Already have an account?{" "}
                 <Link
                   href="/login"
-                  className="font-medium text-[#B66055] hover:text-[#a7727d] hover:underline"
+                  className="font-medium text-[#7e525f] hover:text-[#986673] hover:underline"
                 >
                   Log in
                 </Link>
@@ -93,8 +93,8 @@ export default function Signup() {
                   required
                   className={
                     errorMessage !== null
-                      ? "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border border-red-500 focus:border-[#B66070] shadow-md rounded-lg duration-200"
-                      : "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border focus:border-[#B66070] shadow-md rounded-lg duration-200"
+                      ? "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border border-red-500 focus:border-[#7e525f] shadow-md rounded-lg duration-200"
+                      : "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border focus:border-[#7e525f] shadow-md rounded-lg duration-200"
                   }
                   placeholder="johndoe"
                   value={username}
@@ -108,8 +108,8 @@ export default function Signup() {
                   required
                   className={
                     errorMessage !== null
-                      ? "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border border-red-500 focus:border-[#B66070] shadow-md rounded-lg duration-200"
-                      : "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border focus:border-[#B66070] shadow-md rounded-lg duration-200"
+                      ? "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border border-red-500 focus:border-[#7e525f] shadow-md rounded-lg duration-200"
+                      : "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border focus:border-[#7e525f] shadow-md rounded-lg duration-200"
                   }
                   placeholder="johndoe@mail.com"
                   value={email}
@@ -166,8 +166,8 @@ export default function Signup() {
                     required
                     className={
                       errorMessage !== null
-                        ? "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border border-red-500 focus:border-[#B66070] shadow-md rounded-lg duration-200"
-                        : "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border focus:border-[#B66070] shadow-md rounded-lg duration-200"
+                        ? "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border border-red-500 focus:border-[#7e525f] shadow-md rounded-lg duration-200"
+                        : "w-full mt-2 px-3 py-2 text-gray-800 bg-transparent outline-none border focus:border-[#7e525f] shadow-md rounded-lg duration-200"
                     }
                     placeholder="Enter a secure password"
                     onChange={(e) => setPassword(e.target.value)}
@@ -182,8 +182,8 @@ export default function Signup() {
                 type="submit"
                 className={
                   loading
-                    ? "w-full px-4 py-2 text-white font-medium bg-[#b66070] hover:cursor-not-allowed rounded-lg duration-150"
-                    : "w-full px-4 py-2 text-white font-medium bg-[#b66070] hover:bg-[#a7727d] active:bg-[#b66055] rounded-lg duration-150"
+                    ? "w-full px-4 py-2 text-white font-medium bg-[#a7727d] hover:cursor-not-allowed rounded-lg duration-150"
+                    : "w-full px-4 py-2 text-white font-medium bg-[#7e525f] hover:bg-[#986673] active:bg-[#7e525f] rounded-lg duration-150"
                 }
                 disabled={loading && true}
               >

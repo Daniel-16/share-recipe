@@ -6,7 +6,7 @@ export default function Instructions() {
         <ul className="py-5 text-gray-600 space-y-5">
           <li>
             <div className="inline-flex items-start justify-items-center space-x-2">
-              <div className="rounded-md py-1 px-2 bg-[#b66055]">
+              <div className="rounded-md py-1 px-2 bg-[#7e525f]">
                 <p className="text-white text-sm font-extrabold">1</p>
               </div>
               <p>
@@ -17,7 +17,7 @@ export default function Instructions() {
           </li>
           <li>
             <div className="inline-flex items-start justify-items-center space-x-2">
-              <div className="rounded-md py-1 px-2 bg-[#b66055]">
+              <div className="rounded-md py-1 px-2 bg-[#7e525f]">
                 <p className="text-white text-sm font-extrabold">2</p>
               </div>
               <p>
@@ -28,7 +28,7 @@ export default function Instructions() {
           </li>
           <li>
             <div className="inline-flex items-start justify-items-center space-x-2">
-              <div className="rounded-md py-1 px-2 bg-[#b66055]">
+              <div className="rounded-md py-1 px-2 bg-[#7e525f]">
                 <p className="text-white text-sm font-extrabold">3</p>
               </div>
               <p>

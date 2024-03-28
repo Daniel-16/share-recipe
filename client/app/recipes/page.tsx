@@ -21,11 +21,11 @@ export default function Home() {
               className="w-full h-[40vh] rounded-t-lg object-cover"
             />
             <div className="mt-3 space-y-2 px-3 pb-3">
-              <span className="block text-[#b66055] text-sm">
+              <span className="block text-[#7e525f] text-sm">
                 21st March, 2022
               </span>
               <div className="flex items-center justify-between">
-                <h3 className="text-lg text-gray-800duration-150 group-hover:text-[#b66055] font-semibold">
+                <h3 className="text-lg text-gray-800duration-150 group-hover:text-[#7e525f] font-semibold">
                   Italian pasta
                 </h3>
                 <div
@@ -43,7 +43,7 @@ export default function Home() {
                   >
                     <path
                       d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2zm5.143 28.305V49H26.857V30.305H16L32 15l16 15.305H37.143z"
-                      fill="#B66055"
+                      fill="#7e525f"
                     ></path>
                   </svg>
                   <span className="text-gray-800text-sm">
@@ -57,7 +57,7 @@ export default function Home() {
               </p>
               <div className="inline-flex items-center space-x-1">
                 <svg
-                  fill="#B66055"
+                  fill="#7e525f"
                   className="w-5 flex-shrink-0"
                   viewBox="0 0 512 512"
                   id="_x30_1"
@@ -80,11 +80,11 @@ export default function Home() {
               className="w-full h-[40vh] rounded-t-lg object-cover"
             />
             <div className="mt-3 space-y-2 px-3 pb-3">
-              <span className="block text-[#b66055] text-sm">
+              <span className="block text-[#7e525f] text-sm">
                 21st March, 2022
               </span>
               <div className="flex items-center justify-between">
-                <h3 className="text-lg text-gray-800duration-150 group-hover:text-[#b66055] font-semibold">
+                <h3 className="text-lg text-gray-800duration-150 group-hover:text-[#7e525f] font-semibold">
                   Italian pasta
                 </h3>
                 <div
@@ -102,7 +102,7 @@ export default function Home() {
                   >
                     <path
                       d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2zm5.143 28.305V49H26.857V30.305H16L32 15l16 15.305H37.143z"
-                      fill="#B66055"
+                      fill="#7e525f"
                     ></path>
                   </svg>
                   <span className="text-gray-800text-sm">
@@ -117,7 +117,7 @@ export default function Home() {
               </p>
               <div className="inline-flex items-center space-x-1">
                 <svg
-                  fill="#B66055"
+                  fill="#7e525f"
                   className="w-5 flex-shrink-0"
                   viewBox="0 0 512 512"
                   id="_x30_1"
@@ -140,11 +140,11 @@ export default function Home() {
               className="w-full h-[40vh] rounded-t-lg object-cover"
             />
             <div className="mt-3 space-y-2 px-3 pb-3">
-              <span className="block text-[#b66055] text-sm">
+              <span className="block text-[#7e525f] text-sm">
                 21st March, 2022
               </span>
               <div className="flex items-center justify-between">
-                <h3 className="text-lg text-gray-800duration-150 group-hover:text-[#b66055] font-semibold">
+                <h3 className="text-lg text-gray-800duration-150 group-hover:text-[#7e525f] font-semibold">
                   Italian pasta
                 </h3>
                 <div
@@ -162,7 +162,7 @@ export default function Home() {
                   >
                     <path
                       d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2zm5.143 28.305V49H26.857V30.305H16L32 15l16 15.305H37.143z"
-                      fill="#B66055"
+                      fill="#7e525f"
                     ></path>
                   </svg>
                   <span className="text-gray-800text-sm">
@@ -177,7 +177,7 @@ export default function Home() {
               </p>
               <div className="inline-flex items-center space-x-1">
                 <svg
-                  fill="#B66055"
+                  fill="#7e525f"
                   className="w-5 flex-shrink-0"
                   viewBox="0 0 512 512"
                   id="_x30_1"
@@ -200,11 +200,11 @@ export default function Home() {
               className="w-full h-[40vh] rounded-t-lg object-cover"
             />
             <div className="mt-3 space-y-2 px-3 pb-3">
-              <span className="block text-[#b66055] text-sm">
+              <span className="block text-[#7e525f] text-sm">
                 21st March, 2022
               </span>
               <div className="flex items-center justify-between">
-                <h3 className="text-lg text-gray-800duration-150 group-hover:text-[#b66055] font-semibold">
+                <h3 className="text-lg text-gray-800duration-150 group-hover:text-[#7e525f] font-semibold">
                   Italian pasta
                 </h3>
                 <div
@@ -222,7 +222,7 @@ export default function Home() {
                   >
                     <path
                       d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2zm5.143 28.305V49H26.857V30.305H16L32 15l16 15.305H37.143z"
-                      fill="#B66055"
+                      fill="#7e525f"
                     ></path>
                   </svg>
                   <span className="text-gray-800text-sm">
@@ -237,7 +237,7 @@ export default function Home() {
               </p>
               <div className="inline-flex items-center space-x-1">
                 <svg
-                  fill="#B66055"
+                  fill="#7e525f"
                   className="w-5 flex-shrink-0"
                   viewBox="0 0 512 512"
                   id="_x30_1"

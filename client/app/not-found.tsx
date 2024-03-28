@@ -14,7 +14,7 @@ export default function NotFound() {
           </p>
           <Link
             href="/"
-            className="text-[#b66055] duration-150 hover:text-[#a7727d] font-medium inline-flex items-center gap-x-1"
+            className="text-[#7e525f] duration-150 hover:text-[#986673] font-medium inline-flex items-center gap-x-1"
           >
             Return home
             <svg
