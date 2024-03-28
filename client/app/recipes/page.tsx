@@ -82,7 +82,9 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 text-sm duration-150 group-hover:text-gray-800">
-                  {text.length > 113 ? `${text.slice(0, 113)}...` : text}
+                  {recipe.description && recipe.description.length > 113
+                    ? `${recipe.description.slice(0, 113)}...`
+                    : recipe.description}
                 </p>
                 <div className="inline-flex items-center space-x-1">
                   <svg
