@@ -1,18 +1,17 @@
 "use client";
 import Image from "next/image";
-import recipeImage from "../assets/eaters-collective-i_xVfNtQjwI-unsplash.jpg";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import { dateFormat } from "@/utils/dateFormat";
 import Cookies from "js-cookie";
 
-type VoteState = {
-  [key: number]: number;
-};
+// type VoteState = {
+//   [key: number]: number;
+// };
 
 export default function RecipeBlogs() {
-  const [votes, setVotes] = useState([]);
+  // const [votes, setVotes] = useState([]);
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -22,29 +21,12 @@ export default function RecipeBlogs() {
         const { recipes } = response.data;
         // console.log(recipes.slice(0, 6));
         setRecipes(recipes.slice(0, 6));
-        // recipes.slice(0, 6).forEach(async (recipe: { _id: any }) => {
-        //   const { data } = await Axios.get(
-        //     `http://localhost:7000/api/recipes/${recipe._id}/votes`
-        //   );
-        //   console.log(data.votes);
-
-        //   setVotes((prevVotes: any) => ({
-        //     ...prevVotes,
-        //     [recipe._id]: data.votes,
-        //   }));
-        // });
       } catch (error) {
         console.error(error);
       }
     };
-
-    // const startPolling = () => {
     fetchRecipes();
-    // const interval = setInterval(fetchRecipes, 500);
-    // return () => clearInterval(interval);
-    // };
-    // startPolling();
-  }, []);
+  }, [recipes]);
 
   const handleVotes = async (recipeId: any) => {
     try {
