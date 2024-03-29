@@ -1,17 +1,17 @@
 "use client";
 import Image from "next/image";
-import recipeImage from "../assets/eaters-collective-i_xVfNtQjwI-unsplash.jpg";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import { dateFormat } from "@/utils/dateFormat";
+import Cookies from "js-cookie";
 
-type VoteState = {
-  [key: number]: number;
-};
+// type VoteState = {
+//   [key: number]: number;
+// };
 
 export default function RecipeBlogs() {
-  const [votes, setVotes] = useState<VoteState>({});
+  // const [votes, setVotes] = useState([]);
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -19,23 +19,35 @@ export default function RecipeBlogs() {
       try {
         const response = await Axios.get("http://localhost:7000/api/recipes");
         const { recipes } = response.data;
-        console.log(recipes.slice(0, 6));
+        // console.log(recipes.slice(0, 6));
         setRecipes(recipes.slice(0, 6));
       } catch (error) {
         console.error(error);
       }
     };
     fetchRecipes();
-  }, []);
+  }, [recipes]);
 
-  const handleVotes = (cardId: any) => {
-    setVotes((prevVotes: any) => ({
-      ...prevVotes,
-      [cardId]: (prevVotes[cardId] || 0) + 1,
-    }));
+  const handleVotes = async (recipeId: any) => {
+    try {
+      const upvote = await Axios.put(
+        `http://localhost:7000/api/recipes/${recipeId}/upvote`,
+        {},
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${Cookies.get("currentUser")}`,
+          },
+        }
+      );
+      console.log(upvote.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
+
   let numCols = 3;
-  if (recipes.length === 2) {
+  if (recipes.length <= 2) {
     numCols = 2;
   }
   return (
@@ -68,12 +80,12 @@ export default function RecipeBlogs() {
                   {dateFormat(recipe.createdAt)}
                 </span>
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg text-gray-800duration-150 group-hover:text-[#7e525f] font-semibold">
+                  <h3 className="text-lg text-gray-800 duration-150 group-hover:text-[#7e525f] font-semibold">
                     {recipe.title}
                   </h3>
                   <div
                     className="flex border border-[#dcc5c9] px-2 py-1 rounded-lg items-center space-x-2 hover:shadow-md cursor-pointer"
-                    // onClick={() => handleVotes(1)}
+                    onClick={() => handleVotes(recipe._id)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -90,8 +102,7 @@ export default function RecipeBlogs() {
                       ></path>
                     </svg>
                     <span className="text-gray-800 text-sm">
-                      {/* {votes[1] || 0} votes */}
-                      110 votes
+                      {recipe.upvotes.length} votes
                     </span>
                   </div>
                 </div>
