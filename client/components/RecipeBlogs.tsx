@@ -35,7 +35,7 @@ export default function RecipeBlogs() {
     }));
   };
   let numCols = 3;
-  if (recipes.length === 2) {
+  if (recipes.length <= 2) {
     numCols = 2;
   }
   return (
