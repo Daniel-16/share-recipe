@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 // import { Skeleton } from "@/components/ui/skeleton";
 import Loading from "../loading";
 import { Skeleton } from "@/components/ui/skeleton";
+import { dateFormat } from "@/utils/dateFormat";
 
 export default function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -53,27 +54,6 @@ export default function Home() {
             className={`grid gap-x-8 md:gap-x-2 lg:gap-x-8 gap-y-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-${numCols} mb-5`}
           >
             {recipes.map((recipe: any) => {
-              const createdAtString = recipe.createdAt;
-              const createdAtDate = new Date(createdAtString);
-              const months = [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December",
-              ];
-
-              const day = createdAtDate.getDate();
-              const month = months[createdAtDate.getMonth()];
-              const year = createdAtDate.getFullYear();
-              const formattedDate = `${day} ${month}, ${year}`;
               return (
                 <li
                   key={recipe._id}
@@ -89,7 +69,7 @@ export default function Home() {
                   />
                   <div className="mt-3 space-y-2 px-3 pb-3">
                     <span className="block text-[#7e525f] text-sm">
-                      {formattedDate}
+                      {dateFormat(recipe.createdAt)}
                     </span>
                     <div className="flex items-center justify-between">
                       <h3 className="text-lg text-gray-800duration-150 group-hover:text-[#7e525f] font-semibold">
