@@ -1,5 +1,6 @@
 import RecipeModel from "../models/RecipeModel.js";
 import UserModel from "../models/UserModel.js";
+import { io } from "../index.js";
 
 /**
  * Creates a new recipe.
@@ -96,6 +97,9 @@ export const upVoteRecipe = async (req, res) => {
         { $pull: { upvotes: userId } },
         { new: true }
       );
+
+      //Emit socket event for upvote removal
+      io.emit("upvote-removed", { recipeId: userId });
       return res.status(200).json({
         success: true,
         message: "Since you upvoted, you have removed your vote",
@@ -104,6 +108,9 @@ export const upVoteRecipe = async (req, res) => {
 
     recipe.upvotes.push(userId);
     await recipe.save();
+
+    //Emit socket event for upvoting recipe
+    io.emit("new-upvote", { recipeId: userId });
     res.status(200).json({
       success: true,
       // votedUsers: updateRecipe,
