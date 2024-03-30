@@ -1,6 +1,6 @@
 "use client";
 import Axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Cookies from "js-cookie";
 import Image from "next/image";
 import { dateFormat } from "@/utils/dateFormat";
@@ -9,6 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function Recipes() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState<boolean>(false);
+
   useEffect(() => {
     setLoading(true);
     const fetchRecipes = async () => {
@@ -38,6 +39,9 @@ export default function Recipes() {
           },
         }
       );
+      const response = await Axios.get("http://localhost:7000/api/recipes");
+      const { recipes } = response.data;
+      setRecipes(recipes);
       console.log(upvote.data);
     } catch (error) {
       console.error(error);
