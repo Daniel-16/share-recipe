@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Recipes />
+      <div className="h-screen">
+        <Recipes />
+      </div>
     </>
   );
 }
