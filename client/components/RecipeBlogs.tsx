@@ -6,6 +6,7 @@ import Axios from "axios";
 import { dateFormat } from "@/utils/dateFormat";
 import Cookies from "js-cookie";
 
+//Shape of vote loading state object
 interface VoteLoad {
   [recipeId: string]: boolean;
 }
@@ -14,12 +15,14 @@ export default function RecipeBlogs() {
   const [recipes, setRecipes] = useState([]);
   const [voteLoad, setVoteLoad] = useState<VoteLoad>({});
 
+  //Fetch recipes when mounted
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
         const response = await Axios.get("http://localhost:7000/api/recipes");
         const { recipes } = response.data;
         // console.log(recipes.slice(0, 6));
+        //Set the state to the first six recipes
         setRecipes(recipes.slice(0, 6));
       } catch (error) {
         console.error(error);
@@ -28,6 +31,7 @@ export default function RecipeBlogs() {
     fetchRecipes();
   }, []);
 
+  //Handle upvotes on recipes
   const handleVotes = async (recipeId: any) => {
     setVoteLoad((prevState) => ({ ...prevState, [recipeId]: true }));
     try {
@@ -41,6 +45,8 @@ export default function RecipeBlogs() {
           },
         }
       );
+
+      //Fetch recipe data to refresh
       const response = await Axios.get("http://localhost:7000/api/recipes");
       const { recipes } = response.data;
       setRecipes(recipes);
