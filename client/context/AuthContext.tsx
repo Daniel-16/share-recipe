@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useState, ReactNode, useEffect } from "react";
+import Cookies from "js-cookie";
 
 interface AuthContextData {
   isAuthenticated: string;
@@ -18,10 +19,13 @@ const AuthContext = createContext<AuthContextData>({
 const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState<string>("");
   useEffect(() => {
-    const authValue = localStorage.getItem("isAuthenticated");
-    if (authValue) {
+    localStorage.getItem("isAuthenticated");
+    const getCookies = Cookies.get("currentUser");
+    if (getCookies) {
       setIsAuthenticated("true");
     }
+    localStorage.removeItem("isAuthenticated");
+    localStorage.removeItem("username");
   }, []);
 
   useEffect(() => {
