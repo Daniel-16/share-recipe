@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import { dateFormat } from "@/utils/dateFormat";
 import Cookies from "js-cookie";
+import { AuthContext } from "@/context/AuthContext";
 
 //Shape of vote loading state object
 interface VoteLoad {
@@ -14,6 +15,7 @@ interface VoteLoad {
 export default function RecipeBlogs() {
   const [recipes, setRecipes] = useState([]);
   const [voteLoad, setVoteLoad] = useState<VoteLoad>({});
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
   //Fetch recipes when mounted
   useEffect(() => {
@@ -29,6 +31,12 @@ export default function RecipeBlogs() {
       }
     };
     fetchRecipes();
+  }, []);
+
+  useEffect(() => {
+    if (localStorage.getItem("isAuthenticated") == "true") {
+      setIsAuthenticated(true);
+    }
   }, []);
 
   //Handle upvotes on recipes
@@ -97,7 +105,12 @@ export default function RecipeBlogs() {
                   </h3>
                   <div
                     className="flex border border-[#dcc5c9] px-2 py-1 rounded-lg items-center space-x-2 hover:shadow-md cursor-pointer"
-                    onClick={() => handleVotes(recipe._id)}
+                    onClick={
+                      isAuthenticated
+                        ? (event: React.MouseEvent<HTMLDivElement>) =>
+                            handleVotes(recipe._id).then(() => {})
+                        : undefined
+                    }
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
