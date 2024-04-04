@@ -6,6 +6,7 @@ import {
 } from "../controllers/UserController.js";
 import {
   createRecipe,
+  deleteRecipe,
   getAllRecipes,
   getRecipeVotes,
   getUserRecipes,
@@ -98,5 +99,16 @@ router.post("/subscribe", subscribe);
  * @param {function} middleware
  */
 router.get("/userRecipes", authenticateUser, getUserRecipes);
+
+/**
+ * Route for deleting a recipe
+ * @name deleteRecipe
+ * @memberof router
+ * @function
+ * @inner
+ * @param {string} path
+ * @param {function} middleware
+ */
+router.delete("/recipe/:recipeId/delete", authenticateUser, deleteRecipe);
 
 export default router;

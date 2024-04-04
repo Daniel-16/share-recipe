@@ -176,3 +176,34 @@ export const getUserRecipes = async (req, res) => {
     });
   }
 };
+
+/**
+ *
+ * @param {Object} req
+ * @param {Object} res
+ * @returns JSON response of deleted recipe
+ */
+export const deleteRecipe = async (req, res) => {
+  const userId = req.user._id;
+  const { recipeId } = req.params;
+  try {
+    const user = await UserModel.findById(userId);
+    if (user) {
+      const recipe = await RecipeModel.findByIdAndDelete(recipeId);
+      return res.status(204).json({
+        success: true,
+        recipe,
+      });
+    } else {
+      res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
