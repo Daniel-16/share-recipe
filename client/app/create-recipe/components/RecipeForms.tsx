@@ -7,6 +7,7 @@ import AddInstructions from "./AddInstructions";
 import CookingTime from "./CookingTime";
 import Axios from "axios";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 export default function RecipeForm() {
   const [recipeTitle, setTitle] = useState<string>("");
@@ -16,6 +17,7 @@ export default function RecipeForm() {
   const [hours, setHours] = useState("");
   const [minutes, setMinutes] = useState("");
   const [previewImgData, setPreviewImgData] = useState<string | null>(null);
+  const router = useRouter();
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -49,6 +51,7 @@ export default function RecipeForm() {
         }
       );
       console.log(createRecipe);
+      router.push("/recipes");
     } catch (error) {
       console.log(error);
     }
