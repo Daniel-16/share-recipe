@@ -88,15 +88,23 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="text-gray-700 hover:text-gray-900">
-                <div
-                  // href="#"
-                  className="block hover:cursor-pointer"
-                  onClick={() => {
-                    scrollToSection(section3);
-                  }}
-                >
-                  Newsletter
-                </div>
+                {isAuthenticated.includes("true") ? (
+                  <Link
+                    href="/my-recipes"
+                    className="block hover:cursor-pointer"
+                  >
+                    My recipes
+                  </Link>
+                ) : (
+                  <div
+                    className="block hover:cursor-pointer"
+                    onClick={() => {
+                      scrollToSection(section3);
+                    }}
+                  >
+                    Newsletter
+                  </div>
+                )}
               </li>
             </ul>
             <div className="md:space-x-2">
