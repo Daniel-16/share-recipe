@@ -84,6 +84,37 @@ export default function MyRecipes() {
     }
   };
 
+  const handleDelete = async (recipeId: any) => {
+    try {
+      const deleteRecipe = await Axios.delete(
+        `http://localhost:7000/api/recipe/${recipeId}/delete`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${Cookies.get("currentUser")}`,
+          },
+        }
+      );
+      try {
+        const response = await Axios.get(
+          "http://localhost:7000/api/userRecipes",
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${Cookies.get("currentUser")}`,
+            },
+          }
+        );
+        const { recipes } = response.data;
+        setRecipes(recipes);
+      } catch (error) {
+        console.log(error);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   let numCols = 3;
   if (recipes.length === 2) {
     numCols = 2;
@@ -124,7 +155,9 @@ export default function MyRecipes() {
                         width={10}
                         height={10}
                       />
-                      <RecipeFeatures />
+                      <RecipeFeatures
+                        handleDelete={() => handleDelete(recipe._id)}
+                      />
                     </div>
                     <div className="mt-3 space-y-2 px-3 pb-3">
                       <span className="block text-[#7e525f] text-sm">
