@@ -5,6 +5,8 @@ import Cookies from "js-cookie";
 import Image from "next/image";
 import { dateFormat } from "@/utils/dateFormat";
 import { Skeleton } from "@/components/ui/skeleton";
+import NetworkError from "@/components/NetworkError";
+import Link from "next/link";
 
 interface VoteLoad {
   [recipeId: string]: boolean;
@@ -70,27 +72,33 @@ export default function Recipes() {
   if (recipes.length === 2) {
     numCols = 2;
   }
-  return (
-    <>
-      {loading ? (
-        <div className="flex justify-center items-center h-screen">
-          <div className="flex flex-col space-y-3">
-            <Skeleton className="h-[125px] w-[250px] rounded-xl" />
-            <div className="space-y-2">
-              <Skeleton className="h-4 w-[250px]" />
-              <Skeleton className="h-4 w-[200px]" />
-            </div>
+  if (error !== null) {
+    return <NetworkError error={error} />;
+  }
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="flex flex-col space-y-3">
+          <Skeleton className="h-[125px] w-[250px] rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-[250px]" />
+            <Skeleton className="h-4 w-[200px]" />
           </div>
         </div>
-      ) : (
-        <div className="max-w-screen-lg mx-auto px-5">
-          <h1 className="text-3xl md:text-4xl text-gray-800 font-extrabold py-5">
-            Explore Recipes
-          </h1>
-          <ul
-            className={`grid gap-x-8 md:gap-x-2 lg:gap-x-8 gap-y-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-${numCols} mb-5`}
-          >
-            {recipes.map((recipe: any) => {
+      </div>
+    );
+  }
+  return (
+    <>
+      <div className="max-w-screen-lg mx-auto px-5">
+        <h1 className="text-3xl md:text-4xl text-gray-800 font-extrabold py-5">
+          Explore Recipes
+        </h1>
+        <ul
+          className={`grid gap-x-8 md:gap-x-2 lg:gap-x-8 gap-y-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-${numCols} mb-5`}
+        >
+          {recipes.length > 0 ? (
+            recipes.map((recipe: any) => {
               return (
                 <li
                   key={recipe._id}
@@ -202,15 +210,25 @@ export default function Recipes() {
                   </div>
                 </li>
               );
-            })}
-          </ul>
-          {error !== null && (
-            <div className="flex mx-auto items-center justify-center">
-              <h1 className="text-3xl font-extrabold text-red-500">{error}</h1>
-            </div>
+            })
+          ) : (
+            <p className="h-screen">
+              No recipes created yet,{" "}
+              <Link
+                href={"/create-recipe"}
+                className="text-blue-700 hover:underline"
+              >
+                create new recipe
+              </Link>
+            </p>
           )}
-        </div>
-      )}
+        </ul>
+        {error !== null && (
+          <div className="flex mx-auto items-center justify-center">
+            <h1 className="text-3xl font-extrabold text-red-500">{error}</h1>
+          </div>
+        )}
+      </div>
     </>
   );
 }
